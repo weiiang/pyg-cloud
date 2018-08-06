@@ -8,16 +8,6 @@
   <artifactId>pyg-manager-web</artifactId>
   
   <dependencies>
-  	<dependency>
-  		<groupId>com.pyg</groupId>
-  		<artifactId>pyg-pojo</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.pyg</groupId>
-  		<artifactId>pyg-seller-goods-interface</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
   	
   	
   	<!-- 老版本依赖开始 -->
@@ -89,5 +79,10 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
   	<!-- springCloud相关结束 -->
+  	<dependency>
+  		<groupId>com.pyg</groupId>
+  		<artifactId>pyg-seller-goods-service</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>

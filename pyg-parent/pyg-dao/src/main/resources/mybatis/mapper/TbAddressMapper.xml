@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pyg.mapper.TbAddressMapper">
+  <resultMap id="BaseResultMap" type="com.pyg.entity.TbAddress">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="user_id" />
+    <result column="province_id" jdbcType="VARCHAR" property="province_id" />
+    <result column="city_id" jdbcType="VARCHAR" property="city_id" />
+    <result column="town_id" jdbcType="VARCHAR" property="town_id" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="is_default" jdbcType="VARCHAR" property="is_default" />
+    <result column="notes" jdbcType="VARCHAR" property="notes" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="create_date" />
+    <result column="alias" jdbcType="VARCHAR" property="alias" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, province_id, city_id, town_id, mobile, address, contact, is_default, 
+    notes, create_date, alias
+  </sql>
+  <select id="selectByExample" parameterType="com.pyg.entity.TbAddressExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_address
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_address
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_address
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pyg.entity.TbAddressExample">
+    delete from tb_address
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pyg.entity.TbAddress">
+    insert into tb_address (id, user_id, province_id, 
+      city_id, town_id, mobile, 
+      address, contact, is_default, 
+      notes, create_date, alias
+      )
+    values (#{id,jdbcType=BIGINT}, #{user_id,jdbcType=VARCHAR}, #{province_id,jdbcType=VARCHAR}, 
+      #{city_id,jdbcType=VARCHAR}, #{town_id,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{contact,jdbcType=VARCHAR}, #{is_default,jdbcType=VARCHAR}, 
+      #{notes,jdbcType=VARCHAR}, #{create_date,jdbcType=TIMESTAMP}, #{alias,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pyg.entity.TbAddress">
+    insert into tb_address
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="user_id != null">
+        user_id,
+      </if>
+      <if test="province_id != null">
+        province_id,
+      </if>
+      <if test="city_id != null">
+        city_id,
+      </if>
+      <if test="town_id != null">
+        town_id,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="contact != null">
+        contact,
+      </if>
+      <if test="is_default != null">
+        is_default,
+      </if>
+      <if test="notes != null">
+        notes,
+      </if>
+      <if test="create_date != null">
+        create_date,
+      </if>
+      <if test="alias != null">
+        alias,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="user_id != null">
+        #{user_id,jdbcType=VARCHAR},
+      </if>
+      <if test="province_id != null">
+        #{province_id,jdbcType=VARCHAR},
+      </if>
+      <if test="city_id != null">
+        #{city_id,jdbcType=VARCHAR},
+      </if>
+      <if test="town_id != null">
+        #{town_id,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="is_default != null">
+        #{is_default,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="create_date != null">
+        #{create_date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="alias != null">
+        #{alias,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pyg.entity.TbAddressExample" resultType="java.lang.Long">
+    select count(*) from tb_address
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_address
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.user_id != null">
+        user_id = #{record.user_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.province_id != null">
+        province_id = #{record.province_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.city_id != null">
+        city_id = #{record.city_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.town_id != null">
+        town_id = #{record.town_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobile != null">
+        mobile = #{record.mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contact != null">
+        contact = #{record.contact,jdbcType=VARCHAR},
+      </if>
+      <if test="record.is_default != null">
+        is_default = #{record.is_default,jdbcType=VARCHAR},
+      </if>
+      <if test="record.notes != null">
+        notes = #{record.notes,jdbcType=VARCHAR},
+      </if>
+      <if test="record.create_date != null">
+        create_date = #{record.create_date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.alias != null">
+        alias = #{record.alias,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_address
+    set id = #{record.id,jdbcType=BIGINT},
+      user_id = #{record.user_id,jdbcType=VARCHAR},
+      province_id = #{record.province_id,jdbcType=VARCHAR},
+      city_id = #{record.city_id,jdbcType=VARCHAR},
+      town_id = #{record.town_id,jdbcType=VARCHAR},
+      mobile = #{record.mobile,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      contact = #{record.contact,jdbcType=VARCHAR},
+      is_default = #{record.is_default,jdbcType=VARCHAR},
+      notes = #{record.notes,jdbcType=VARCHAR},
+      create_date = #{record.create_date,jdbcType=TIMESTAMP},
+      alias = #{record.alias,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pyg.entity.TbAddress">
+    update tb_address
+    <set>
+      <if test="user_id != null">
+        user_id = #{user_id,jdbcType=VARCHAR},
+      </if>
+      <if test="province_id != null">
+        province_id = #{province_id,jdbcType=VARCHAR},
+      </if>
+      <if test="city_id != null">
+        city_id = #{city_id,jdbcType=VARCHAR},
+      </if>
+      <if test="town_id != null">
+        town_id = #{town_id,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="is_default != null">
+        is_default = #{is_default,jdbcType=VARCHAR},
+      </if>
+      <if test="notes != null">
+        notes = #{notes,jdbcType=VARCHAR},
+      </if>
+      <if test="create_date != null">
+        create_date = #{create_date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="alias != null">
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pyg.entity.TbAddress">
+    update tb_address
+    set user_id = #{user_id,jdbcType=VARCHAR},
+      province_id = #{province_id,jdbcType=VARCHAR},
+      city_id = #{city_id,jdbcType=VARCHAR},
+      town_id = #{town_id,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      is_default = #{is_default,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR},
+      create_date = #{create_date,jdbcType=TIMESTAMP},
+      alias = #{alias,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    insert into tb_address
+    (id, user_id, province_id, city_id, town_id, mobile, address, contact, is_default, 
+      notes, create_date, alias)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.user_id,jdbcType=VARCHAR}, #{item.province_id,jdbcType=VARCHAR}, 
+        #{item.city_id,jdbcType=VARCHAR}, #{item.town_id,jdbcType=VARCHAR}, #{item.mobile,jdbcType=VARCHAR}, 
+        #{item.address,jdbcType=VARCHAR}, #{item.contact,jdbcType=VARCHAR}, #{item.is_default,jdbcType=VARCHAR}, 
+        #{item.notes,jdbcType=VARCHAR}, #{item.create_date,jdbcType=TIMESTAMP}, #{item.alias,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" parameterType="map">
+    insert into tb_address (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'id'.toString() == column.value">
+          #{item.id,jdbcType=BIGINT}
+        </if>
+        <if test="'user_id'.toString() == column.value">
+          #{item.user_id,jdbcType=VARCHAR}
+        </if>
+        <if test="'province_id'.toString() == column.value">
+          #{item.province_id,jdbcType=VARCHAR}
+        </if>
+        <if test="'city_id'.toString() == column.value">
+          #{item.city_id,jdbcType=VARCHAR}
+        </if>
+        <if test="'town_id'.toString() == column.value">
+          #{item.town_id,jdbcType=VARCHAR}
+        </if>
+        <if test="'mobile'.toString() == column.value">
+          #{item.mobile,jdbcType=VARCHAR}
+        </if>
+        <if test="'address'.toString() == column.value">
+          #{item.address,jdbcType=VARCHAR}
+        </if>
+        <if test="'contact'.toString() == column.value">
+          #{item.contact,jdbcType=VARCHAR}
+        </if>
+        <if test="'is_default'.toString() == column.value">
+          #{item.is_default,jdbcType=VARCHAR}
+        </if>
+        <if test="'notes'.toString() == column.value">
+          #{item.notes,jdbcType=VARCHAR}
+        </if>
+        <if test="'create_date'.toString() == column.value">
+          #{item.create_date,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'alias'.toString() == column.value">
+          #{item.alias,jdbcType=VARCHAR}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
+</mapper>

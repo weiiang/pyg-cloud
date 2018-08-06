@@ -9,7 +9,7 @@
   
   <dependencies>
   	<!-- 老版本多出的依赖开始 -->
-  	<dependency>
+  	<!-- <dependency>
 	    <groupId>com.github.pagehelper</groupId>
 	    <artifactId>pagehelper</artifactId>	
 	    <version>4.0.0</version>   
@@ -18,10 +18,19 @@
 	    <groupId>com.github.miemiedev</groupId>
 	    <artifactId>mybatis-paginator</artifactId>
 	    <version>1.2.10</version>
-	</dependency>
+	</dependency> -->
 	
   	<!-- 老版本多出的依赖结束 -->
-  
+  	<!-- mybatisPlus插件开始 -->
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatisplus-spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatis-plus</artifactId>
+	</dependency>
+			<!-- mybatisPlus插件结束 -->
   	<!-- 引入自己定义的api通用包，可以使用Dept部门Entity -->
 		<!-- actuator监控信息完善 -->
 		<dependency>
@@ -77,6 +86,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.pyg</groupId>
+			<artifactId>pyg-pojo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
   </dependencies>
 </project>
