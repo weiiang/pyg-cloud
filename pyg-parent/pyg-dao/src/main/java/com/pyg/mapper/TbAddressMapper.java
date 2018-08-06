@@ -2,11 +2,13 @@ package com.pyg.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.pyg.entity.TbAddress;
 import com.pyg.entity.TbAddressExample;
 
+@Mapper
 public interface TbAddressMapper {
     /**
      */

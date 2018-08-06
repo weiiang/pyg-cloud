@@ -84,5 +84,10 @@
   		<artifactId>pyg-seller-goods-service</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.pyg</groupId>
+  		<artifactId>pyg-common</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>

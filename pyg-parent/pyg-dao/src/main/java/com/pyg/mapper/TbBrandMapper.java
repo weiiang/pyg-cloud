@@ -3,8 +3,11 @@ package com.pyg.mapper;
 import com.pyg.entity.TbBrand;
 import com.pyg.entity.TbBrandExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface TbBrandMapper {
     /**
      */

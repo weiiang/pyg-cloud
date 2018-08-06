@@ -1,0 +1,27 @@
+server:
+  port: 8011
+
+eureka:
+  instance:
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone:  http://eureka7001.com:7001/eureka
+      
+spring:
+  application:
+    name: goods-service
+
+  datasource:
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/pinyougoudb
+    dbcp2:
+      initial-size: 5
+      max-total: 5
+      min-idle: 5
+      max-wait-millis: 200
+
