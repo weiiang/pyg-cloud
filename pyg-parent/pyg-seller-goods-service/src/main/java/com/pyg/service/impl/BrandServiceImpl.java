@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.pyg.entity.TbBrand;
 import com.pyg.mapper.TbBrandMapper;
 import com.pyg.service.BrandService;
@@ -16,7 +17,8 @@ public class BrandServiceImpl implements BrandService {
 	
 	@Override
 	public List<TbBrand> list() {
-		return brandMapper.selectByExample(null);
+		Page<TbBrand> page = new Page<TbBrand>(1,10);
+		return brandMapper.selectByExample(page, null);
 	}
 
 }

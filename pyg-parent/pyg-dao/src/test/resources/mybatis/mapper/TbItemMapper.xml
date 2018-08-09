@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pyg.mapper.TbItemMapper">
+  <resultMap id="BaseResultMap" type="com.pyg.entity.TbItem">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="sell_point" jdbcType="VARCHAR" property="sell_point" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="stock_count" jdbcType="INTEGER" property="stock_count" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="barcode" jdbcType="VARCHAR" property="barcode" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="categoryId" jdbcType="BIGINT" property="categoryId" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="item_sn" jdbcType="VARCHAR" property="item_sn" />
+    <result column="cost_pirce" jdbcType="DECIMAL" property="cost_pirce" />
+    <result column="market_price" jdbcType="DECIMAL" property="market_price" />
+    <result column="is_default" jdbcType="VARCHAR" property="is_default" />
+    <result column="goods_id" jdbcType="BIGINT" property="goods_id" />
+    <result column="seller_id" jdbcType="VARCHAR" property="seller_id" />
+    <result column="cart_thumbnail" jdbcType="VARCHAR" property="cart_thumbnail" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="brand" jdbcType="VARCHAR" property="brand" />
+    <result column="spec" jdbcType="VARCHAR" property="spec" />
+    <result column="seller" jdbcType="VARCHAR" property="seller" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, title, sell_point, price, stock_count, num, barcode, image, categoryId, status, 
+    create_time, update_time, item_sn, cost_pirce, market_price, is_default, goods_id, 
+    seller_id, cart_thumbnail, category, brand, spec, seller
+  </sql>
+  <select id="selectByExample" parameterType="com.pyg.entity.TbItemExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_item
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_item
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pyg.entity.TbItemExample">
+    delete from tb_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pyg.entity.TbItem">
+    insert into tb_item (id, title, sell_point, 
+      price, stock_count, num, 
+      barcode, image, categoryId, 
+      status, create_time, update_time, 
+      item_sn, cost_pirce, market_price, 
+      is_default, goods_id, seller_id, 
+      cart_thumbnail, category, brand, 
+      spec, seller)
+    values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{sell_point,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DECIMAL}, #{stock_count,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, 
+      #{barcode,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{categoryId,jdbcType=BIGINT}, 
+      #{status,jdbcType=VARCHAR}, #{create_time,jdbcType=TIMESTAMP}, #{update_time,jdbcType=TIMESTAMP}, 
+      #{item_sn,jdbcType=VARCHAR}, #{cost_pirce,jdbcType=DECIMAL}, #{market_price,jdbcType=DECIMAL}, 
+      #{is_default,jdbcType=VARCHAR}, #{goods_id,jdbcType=BIGINT}, #{seller_id,jdbcType=VARCHAR}, 
+      #{cart_thumbnail,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
+      #{spec,jdbcType=VARCHAR}, #{seller,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pyg.entity.TbItem">
+    insert into tb_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="sell_point != null">
+        sell_point,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="stock_count != null">
+        stock_count,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="barcode != null">
+        barcode,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="categoryId != null">
+        categoryId,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="create_time != null">
+        create_time,
+      </if>
+      <if test="update_time != null">
+        update_time,
+      </if>
+      <if test="item_sn != null">
+        item_sn,
+      </if>
+      <if test="cost_pirce != null">
+        cost_pirce,
+      </if>
+      <if test="market_price != null">
+        market_price,
+      </if>
+      <if test="is_default != null">
+        is_default,
+      </if>
+      <if test="goods_id != null">
+        goods_id,
+      </if>
+      <if test="seller_id != null">
+        seller_id,
+      </if>
+      <if test="cart_thumbnail != null">
+        cart_thumbnail,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="brand != null">
+        brand,
+      </if>
+      <if test="spec != null">
+        spec,
+      </if>
+      <if test="seller != null">
+        seller,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="sell_point != null">
+        #{sell_point,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="stock_count != null">
+        #{stock_count,jdbcType=INTEGER},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="barcode != null">
+        #{barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null">
+        #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null">
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update_time != null">
+        #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="item_sn != null">
+        #{item_sn,jdbcType=VARCHAR},
+      </if>
+      <if test="cost_pirce != null">
+        #{cost_pirce,jdbcType=DECIMAL},
+      </if>
+      <if test="market_price != null">
+        #{market_price,jdbcType=DECIMAL},
+      </if>
+      <if test="is_default != null">
+        #{is_default,jdbcType=VARCHAR},
+      </if>
+      <if test="goods_id != null">
+        #{goods_id,jdbcType=BIGINT},
+      </if>
+      <if test="seller_id != null">
+        #{seller_id,jdbcType=VARCHAR},
+      </if>
+      <if test="cart_thumbnail != null">
+        #{cart_thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null">
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="spec != null">
+        #{spec,jdbcType=VARCHAR},
+      </if>
+      <if test="seller != null">
+        #{seller,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pyg.entity.TbItemExample" resultType="java.lang.Long">
+    select count(*) from tb_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_item
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sell_point != null">
+        sell_point = #{record.sell_point,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.stock_count != null">
+        stock_count = #{record.stock_count,jdbcType=INTEGER},
+      </if>
+      <if test="record.num != null">
+        num = #{record.num,jdbcType=INTEGER},
+      </if>
+      <if test="record.barcode != null">
+        barcode = #{record.barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.image != null">
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.categoryId != null">
+        categoryId = #{record.categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.create_time != null">
+        create_time = #{record.create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.update_time != null">
+        update_time = #{record.update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.item_sn != null">
+        item_sn = #{record.item_sn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cost_pirce != null">
+        cost_pirce = #{record.cost_pirce,jdbcType=DECIMAL},
+      </if>
+      <if test="record.market_price != null">
+        market_price = #{record.market_price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.is_default != null">
+        is_default = #{record.is_default,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goods_id != null">
+        goods_id = #{record.goods_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.seller_id != null">
+        seller_id = #{record.seller_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cart_thumbnail != null">
+        cart_thumbnail = #{record.cart_thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.category != null">
+        category = #{record.category,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brand != null">
+        brand = #{record.brand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.spec != null">
+        spec = #{record.spec,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seller != null">
+        seller = #{record.seller,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_item
+    set id = #{record.id,jdbcType=BIGINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      sell_point = #{record.sell_point,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      stock_count = #{record.stock_count,jdbcType=INTEGER},
+      num = #{record.num,jdbcType=INTEGER},
+      barcode = #{record.barcode,jdbcType=VARCHAR},
+      image = #{record.image,jdbcType=VARCHAR},
+      categoryId = #{record.categoryId,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=VARCHAR},
+      create_time = #{record.create_time,jdbcType=TIMESTAMP},
+      update_time = #{record.update_time,jdbcType=TIMESTAMP},
+      item_sn = #{record.item_sn,jdbcType=VARCHAR},
+      cost_pirce = #{record.cost_pirce,jdbcType=DECIMAL},
+      market_price = #{record.market_price,jdbcType=DECIMAL},
+      is_default = #{record.is_default,jdbcType=VARCHAR},
+      goods_id = #{record.goods_id,jdbcType=BIGINT},
+      seller_id = #{record.seller_id,jdbcType=VARCHAR},
+      cart_thumbnail = #{record.cart_thumbnail,jdbcType=VARCHAR},
+      category = #{record.category,jdbcType=VARCHAR},
+      brand = #{record.brand,jdbcType=VARCHAR},
+      spec = #{record.spec,jdbcType=VARCHAR},
+      seller = #{record.seller,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pyg.entity.TbItem">
+    update tb_item
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="sell_point != null">
+        sell_point = #{sell_point,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="stock_count != null">
+        stock_count = #{stock_count,jdbcType=INTEGER},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="barcode != null">
+        barcode = #{barcode,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null">
+        categoryId = #{categoryId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null">
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update_time != null">
+        update_time = #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="item_sn != null">
+        item_sn = #{item_sn,jdbcType=VARCHAR},
+      </if>
+      <if test="cost_pirce != null">
+        cost_pirce = #{cost_pirce,jdbcType=DECIMAL},
+      </if>
+      <if test="market_price != null">
+        market_price = #{market_price,jdbcType=DECIMAL},
+      </if>
+      <if test="is_default != null">
+        is_default = #{is_default,jdbcType=VARCHAR},
+      </if>
+      <if test="goods_id != null">
+        goods_id = #{goods_id,jdbcType=BIGINT},
+      </if>
+      <if test="seller_id != null">
+        seller_id = #{seller_id,jdbcType=VARCHAR},
+      </if>
+      <if test="cart_thumbnail != null">
+        cart_thumbnail = #{cart_thumbnail,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null">
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="spec != null">
+        spec = #{spec,jdbcType=VARCHAR},
+      </if>
+      <if test="seller != null">
+        seller = #{seller,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pyg.entity.TbItem">
+    update tb_item
+    set title = #{title,jdbcType=VARCHAR},
+      sell_point = #{sell_point,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      stock_count = #{stock_count,jdbcType=INTEGER},
+      num = #{num,jdbcType=INTEGER},
+      barcode = #{barcode,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      categoryId = #{categoryId,jdbcType=BIGINT},
+      status = #{status,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=TIMESTAMP},
+      update_time = #{update_time,jdbcType=TIMESTAMP},
+      item_sn = #{item_sn,jdbcType=VARCHAR},
+      cost_pirce = #{cost_pirce,jdbcType=DECIMAL},
+      market_price = #{market_price,jdbcType=DECIMAL},
+      is_default = #{is_default,jdbcType=VARCHAR},
+      goods_id = #{goods_id,jdbcType=BIGINT},
+      seller_id = #{seller_id,jdbcType=VARCHAR},
+      cart_thumbnail = #{cart_thumbnail,jdbcType=VARCHAR},
+      category = #{category,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      spec = #{spec,jdbcType=VARCHAR},
+      seller = #{seller,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    insert into tb_item
+    (id, title, sell_point, price, stock_count, num, barcode, image, categoryId, status, 
+      create_time, update_time, item_sn, cost_pirce, market_price, is_default, goods_id, 
+      seller_id, cart_thumbnail, category, brand, spec, seller)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.title,jdbcType=VARCHAR}, #{item.sell_point,jdbcType=VARCHAR}, 
+        #{item.price,jdbcType=DECIMAL}, #{item.stock_count,jdbcType=INTEGER}, #{item.num,jdbcType=INTEGER}, 
+        #{item.barcode,jdbcType=VARCHAR}, #{item.image,jdbcType=VARCHAR}, #{item.categoryId,jdbcType=BIGINT}, 
+        #{item.status,jdbcType=VARCHAR}, #{item.create_time,jdbcType=TIMESTAMP}, #{item.update_time,jdbcType=TIMESTAMP}, 
+        #{item.item_sn,jdbcType=VARCHAR}, #{item.cost_pirce,jdbcType=DECIMAL}, #{item.market_price,jdbcType=DECIMAL}, 
+        #{item.is_default,jdbcType=VARCHAR}, #{item.goods_id,jdbcType=BIGINT}, #{item.seller_id,jdbcType=VARCHAR}, 
+        #{item.cart_thumbnail,jdbcType=VARCHAR}, #{item.category,jdbcType=VARCHAR}, #{item.brand,jdbcType=VARCHAR}, 
+        #{item.spec,jdbcType=VARCHAR}, #{item.seller,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" parameterType="map">
+    insert into tb_item (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'id'.toString() == column.value">
+          #{item.id,jdbcType=BIGINT}
+        </if>
+        <if test="'title'.toString() == column.value">
+          #{item.title,jdbcType=VARCHAR}
+        </if>
+        <if test="'sell_point'.toString() == column.value">
+          #{item.sell_point,jdbcType=VARCHAR}
+        </if>
+        <if test="'price'.toString() == column.value">
+          #{item.price,jdbcType=DECIMAL}
+        </if>
+        <if test="'stock_count'.toString() == column.value">
+          #{item.stock_count,jdbcType=INTEGER}
+        </if>
+        <if test="'num'.toString() == column.value">
+          #{item.num,jdbcType=INTEGER}
+        </if>
+        <if test="'barcode'.toString() == column.value">
+          #{item.barcode,jdbcType=VARCHAR}
+        </if>
+        <if test="'image'.toString() == column.value">
+          #{item.image,jdbcType=VARCHAR}
+        </if>
+        <if test="'categoryId'.toString() == column.value">
+          #{item.categoryId,jdbcType=BIGINT}
+        </if>
+        <if test="'status'.toString() == column.value">
+          #{item.status,jdbcType=VARCHAR}
+        </if>
+        <if test="'create_time'.toString() == column.value">
+          #{item.create_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'update_time'.toString() == column.value">
+          #{item.update_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'item_sn'.toString() == column.value">
+          #{item.item_sn,jdbcType=VARCHAR}
+        </if>
+        <if test="'cost_pirce'.toString() == column.value">
+          #{item.cost_pirce,jdbcType=DECIMAL}
+        </if>
+        <if test="'market_price'.toString() == column.value">
+          #{item.market_price,jdbcType=DECIMAL}
+        </if>
+        <if test="'is_default'.toString() == column.value">
+          #{item.is_default,jdbcType=VARCHAR}
+        </if>
+        <if test="'goods_id'.toString() == column.value">
+          #{item.goods_id,jdbcType=BIGINT}
+        </if>
+        <if test="'seller_id'.toString() == column.value">
+          #{item.seller_id,jdbcType=VARCHAR}
+        </if>
+        <if test="'cart_thumbnail'.toString() == column.value">
+          #{item.cart_thumbnail,jdbcType=VARCHAR}
+        </if>
+        <if test="'category'.toString() == column.value">
+          #{item.category,jdbcType=VARCHAR}
+        </if>
+        <if test="'brand'.toString() == column.value">
+          #{item.brand,jdbcType=VARCHAR}
+        </if>
+        <if test="'spec'.toString() == column.value">
+          #{item.spec,jdbcType=VARCHAR}
+        </if>
+        <if test="'seller'.toString() == column.value">
+          #{item.seller,jdbcType=VARCHAR}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
+</mapper>

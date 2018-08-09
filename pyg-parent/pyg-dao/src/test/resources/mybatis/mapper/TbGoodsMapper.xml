@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pyg.mapper.TbGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.pyg.entity.TbGoods">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="seller_id" jdbcType="VARCHAR" property="seller_id" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goods_name" />
+    <result column="default_item_id" jdbcType="BIGINT" property="default_item_id" />
+    <result column="audit_status" jdbcType="VARCHAR" property="audit_status" />
+    <result column="is_marketable" jdbcType="VARCHAR" property="is_marketable" />
+    <result column="brand_id" jdbcType="BIGINT" property="brand_id" />
+    <result column="caption" jdbcType="VARCHAR" property="caption" />
+    <result column="category1_id" jdbcType="BIGINT" property="category1_id" />
+    <result column="category2_id" jdbcType="BIGINT" property="category2_id" />
+    <result column="category3_id" jdbcType="BIGINT" property="category3_id" />
+    <result column="small_pic" jdbcType="VARCHAR" property="small_pic" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="type_template_id" jdbcType="BIGINT" property="type_template_id" />
+    <result column="is_enable_spec" jdbcType="VARCHAR" property="is_enable_spec" />
+    <result column="is_delete" jdbcType="VARCHAR" property="is_delete" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, seller_id, goods_name, default_item_id, audit_status, is_marketable, brand_id, 
+    caption, category1_id, category2_id, category3_id, small_pic, price, type_template_id, 
+    is_enable_spec, is_delete
+  </sql>
+  <select id="selectByExample" parameterType="com.pyg.entity.TbGoodsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_goods
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByPrimaryKeyWithLogicalDelete" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_goods
+    where id = #{id,jdbcType=BIGINT}
+      and is_delete = 
+    <choose>
+      <when test="andLogicalDeleted">
+        '1'
+      </when>
+      <otherwise>
+        '0'
+      </otherwise>
+    </choose>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_goods
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pyg.entity.TbGoodsExample">
+    delete from tb_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pyg.entity.TbGoods">
+    insert into tb_goods (id, seller_id, goods_name, 
+      default_item_id, audit_status, is_marketable, 
+      brand_id, caption, category1_id, 
+      category2_id, category3_id, small_pic, 
+      price, type_template_id, is_enable_spec, 
+      is_delete)
+    values (#{id,jdbcType=BIGINT}, #{seller_id,jdbcType=VARCHAR}, #{goods_name,jdbcType=VARCHAR}, 
+      #{default_item_id,jdbcType=BIGINT}, #{audit_status,jdbcType=VARCHAR}, #{is_marketable,jdbcType=VARCHAR}, 
+      #{brand_id,jdbcType=BIGINT}, #{caption,jdbcType=VARCHAR}, #{category1_id,jdbcType=BIGINT}, 
+      #{category2_id,jdbcType=BIGINT}, #{category3_id,jdbcType=BIGINT}, #{small_pic,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DECIMAL}, #{type_template_id,jdbcType=BIGINT}, #{is_enable_spec,jdbcType=VARCHAR}, 
+      #{is_delete,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pyg.entity.TbGoods">
+    insert into tb_goods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="seller_id != null">
+        seller_id,
+      </if>
+      <if test="goods_name != null">
+        goods_name,
+      </if>
+      <if test="default_item_id != null">
+        default_item_id,
+      </if>
+      <if test="audit_status != null">
+        audit_status,
+      </if>
+      <if test="is_marketable != null">
+        is_marketable,
+      </if>
+      <if test="brand_id != null">
+        brand_id,
+      </if>
+      <if test="caption != null">
+        caption,
+      </if>
+      <if test="category1_id != null">
+        category1_id,
+      </if>
+      <if test="category2_id != null">
+        category2_id,
+      </if>
+      <if test="category3_id != null">
+        category3_id,
+      </if>
+      <if test="small_pic != null">
+        small_pic,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="type_template_id != null">
+        type_template_id,
+      </if>
+      <if test="is_enable_spec != null">
+        is_enable_spec,
+      </if>
+      <if test="is_delete != null">
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="seller_id != null">
+        #{seller_id,jdbcType=VARCHAR},
+      </if>
+      <if test="goods_name != null">
+        #{goods_name,jdbcType=VARCHAR},
+      </if>
+      <if test="default_item_id != null">
+        #{default_item_id,jdbcType=BIGINT},
+      </if>
+      <if test="audit_status != null">
+        #{audit_status,jdbcType=VARCHAR},
+      </if>
+      <if test="is_marketable != null">
+        #{is_marketable,jdbcType=VARCHAR},
+      </if>
+      <if test="brand_id != null">
+        #{brand_id,jdbcType=BIGINT},
+      </if>
+      <if test="caption != null">
+        #{caption,jdbcType=VARCHAR},
+      </if>
+      <if test="category1_id != null">
+        #{category1_id,jdbcType=BIGINT},
+      </if>
+      <if test="category2_id != null">
+        #{category2_id,jdbcType=BIGINT},
+      </if>
+      <if test="category3_id != null">
+        #{category3_id,jdbcType=BIGINT},
+      </if>
+      <if test="small_pic != null">
+        #{small_pic,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="type_template_id != null">
+        #{type_template_id,jdbcType=BIGINT},
+      </if>
+      <if test="is_enable_spec != null">
+        #{is_enable_spec,jdbcType=VARCHAR},
+      </if>
+      <if test="is_delete != null">
+        #{is_delete,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pyg.entity.TbGoodsExample" resultType="java.lang.Long">
+    select count(*) from tb_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_goods
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.seller_id != null">
+        seller_id = #{record.seller_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goods_name != null">
+        goods_name = #{record.goods_name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.default_item_id != null">
+        default_item_id = #{record.default_item_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.audit_status != null">
+        audit_status = #{record.audit_status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.is_marketable != null">
+        is_marketable = #{record.is_marketable,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brand_id != null">
+        brand_id = #{record.brand_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.caption != null">
+        caption = #{record.caption,jdbcType=VARCHAR},
+      </if>
+      <if test="record.category1_id != null">
+        category1_id = #{record.category1_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.category2_id != null">
+        category2_id = #{record.category2_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.category3_id != null">
+        category3_id = #{record.category3_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.small_pic != null">
+        small_pic = #{record.small_pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.type_template_id != null">
+        type_template_id = #{record.type_template_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.is_enable_spec != null">
+        is_enable_spec = #{record.is_enable_spec,jdbcType=VARCHAR},
+      </if>
+      <if test="record.is_delete != null">
+        is_delete = #{record.is_delete,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_goods
+    set id = #{record.id,jdbcType=BIGINT},
+      seller_id = #{record.seller_id,jdbcType=VARCHAR},
+      goods_name = #{record.goods_name,jdbcType=VARCHAR},
+      default_item_id = #{record.default_item_id,jdbcType=BIGINT},
+      audit_status = #{record.audit_status,jdbcType=VARCHAR},
+      is_marketable = #{record.is_marketable,jdbcType=VARCHAR},
+      brand_id = #{record.brand_id,jdbcType=BIGINT},
+      caption = #{record.caption,jdbcType=VARCHAR},
+      category1_id = #{record.category1_id,jdbcType=BIGINT},
+      category2_id = #{record.category2_id,jdbcType=BIGINT},
+      category3_id = #{record.category3_id,jdbcType=BIGINT},
+      small_pic = #{record.small_pic,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      type_template_id = #{record.type_template_id,jdbcType=BIGINT},
+      is_enable_spec = #{record.is_enable_spec,jdbcType=VARCHAR},
+      is_delete = #{record.is_delete,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pyg.entity.TbGoods">
+    update tb_goods
+    <set>
+      <if test="seller_id != null">
+        seller_id = #{seller_id,jdbcType=VARCHAR},
+      </if>
+      <if test="goods_name != null">
+        goods_name = #{goods_name,jdbcType=VARCHAR},
+      </if>
+      <if test="default_item_id != null">
+        default_item_id = #{default_item_id,jdbcType=BIGINT},
+      </if>
+      <if test="audit_status != null">
+        audit_status = #{audit_status,jdbcType=VARCHAR},
+      </if>
+      <if test="is_marketable != null">
+        is_marketable = #{is_marketable,jdbcType=VARCHAR},
+      </if>
+      <if test="brand_id != null">
+        brand_id = #{brand_id,jdbcType=BIGINT},
+      </if>
+      <if test="caption != null">
+        caption = #{caption,jdbcType=VARCHAR},
+      </if>
+      <if test="category1_id != null">
+        category1_id = #{category1_id,jdbcType=BIGINT},
+      </if>
+      <if test="category2_id != null">
+        category2_id = #{category2_id,jdbcType=BIGINT},
+      </if>
+      <if test="category3_id != null">
+        category3_id = #{category3_id,jdbcType=BIGINT},
+      </if>
+      <if test="small_pic != null">
+        small_pic = #{small_pic,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="type_template_id != null">
+        type_template_id = #{type_template_id,jdbcType=BIGINT},
+      </if>
+      <if test="is_enable_spec != null">
+        is_enable_spec = #{is_enable_spec,jdbcType=VARCHAR},
+      </if>
+      <if test="is_delete != null">
+        is_delete = #{is_delete,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pyg.entity.TbGoods">
+    update tb_goods
+    set seller_id = #{seller_id,jdbcType=VARCHAR},
+      goods_name = #{goods_name,jdbcType=VARCHAR},
+      default_item_id = #{default_item_id,jdbcType=BIGINT},
+      audit_status = #{audit_status,jdbcType=VARCHAR},
+      is_marketable = #{is_marketable,jdbcType=VARCHAR},
+      brand_id = #{brand_id,jdbcType=BIGINT},
+      caption = #{caption,jdbcType=VARCHAR},
+      category1_id = #{category1_id,jdbcType=BIGINT},
+      category2_id = #{category2_id,jdbcType=BIGINT},
+      category3_id = #{category3_id,jdbcType=BIGINT},
+      small_pic = #{small_pic,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      type_template_id = #{type_template_id,jdbcType=BIGINT},
+      is_enable_spec = #{is_enable_spec,jdbcType=VARCHAR},
+      is_delete = #{is_delete,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="logicalDeleteByExample" parameterType="map">
+    update tb_goods set is_delete = '1'
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="logicalDeleteByPrimaryKey" parameterType="java.lang.Long">
+    update tb_goods set is_delete = '1'
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    insert into tb_goods
+    (id, seller_id, goods_name, default_item_id, audit_status, is_marketable, brand_id, 
+      caption, category1_id, category2_id, category3_id, small_pic, price, type_template_id, 
+      is_enable_spec, is_delete)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.seller_id,jdbcType=VARCHAR}, #{item.goods_name,jdbcType=VARCHAR}, 
+        #{item.default_item_id,jdbcType=BIGINT}, #{item.audit_status,jdbcType=VARCHAR}, 
+        #{item.is_marketable,jdbcType=VARCHAR}, #{item.brand_id,jdbcType=BIGINT}, #{item.caption,jdbcType=VARCHAR}, 
+        #{item.category1_id,jdbcType=BIGINT}, #{item.category2_id,jdbcType=BIGINT}, #{item.category3_id,jdbcType=BIGINT}, 
+        #{item.small_pic,jdbcType=VARCHAR}, #{item.price,jdbcType=DECIMAL}, #{item.type_template_id,jdbcType=BIGINT}, 
+        #{item.is_enable_spec,jdbcType=VARCHAR}, #{item.is_delete,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" parameterType="map">
+    insert into tb_goods (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'id'.toString() == column.value">
+          #{item.id,jdbcType=BIGINT}
+        </if>
+        <if test="'seller_id'.toString() == column.value">
+          #{item.seller_id,jdbcType=VARCHAR}
+        </if>
+        <if test="'goods_name'.toString() == column.value">
+          #{item.goods_name,jdbcType=VARCHAR}
+        </if>
+        <if test="'default_item_id'.toString() == column.value">
+          #{item.default_item_id,jdbcType=BIGINT}
+        </if>
+        <if test="'audit_status'.toString() == column.value">
+          #{item.audit_status,jdbcType=VARCHAR}
+        </if>
+        <if test="'is_marketable'.toString() == column.value">
+          #{item.is_marketable,jdbcType=VARCHAR}
+        </if>
+        <if test="'brand_id'.toString() == column.value">
+          #{item.brand_id,jdbcType=BIGINT}
+        </if>
+        <if test="'caption'.toString() == column.value">
+          #{item.caption,jdbcType=VARCHAR}
+        </if>
+        <if test="'category1_id'.toString() == column.value">
+          #{item.category1_id,jdbcType=BIGINT}
+        </if>
+        <if test="'category2_id'.toString() == column.value">
+          #{item.category2_id,jdbcType=BIGINT}
+        </if>
+        <if test="'category3_id'.toString() == column.value">
+          #{item.category3_id,jdbcType=BIGINT}
+        </if>
+        <if test="'small_pic'.toString() == column.value">
+          #{item.small_pic,jdbcType=VARCHAR}
+        </if>
+        <if test="'price'.toString() == column.value">
+          #{item.price,jdbcType=DECIMAL}
+        </if>
+        <if test="'type_template_id'.toString() == column.value">
+          #{item.type_template_id,jdbcType=BIGINT}
+        </if>
+        <if test="'is_enable_spec'.toString() == column.value">
+          #{item.is_enable_spec,jdbcType=VARCHAR}
+        </if>
+        <if test="'is_delete'.toString() == column.value">
+          #{item.is_delete,jdbcType=VARCHAR}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
+</mapper>

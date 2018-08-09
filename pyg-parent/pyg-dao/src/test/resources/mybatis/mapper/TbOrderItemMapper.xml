@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pyg.mapper.TbOrderItemMapper">
+  <resultMap id="BaseResultMap" type="com.pyg.entity.TbOrderItem">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="item_id" jdbcType="BIGINT" property="item_id" />
+    <result column="goods_id" jdbcType="BIGINT" property="goods_id" />
+    <result column="order_id" jdbcType="BIGINT" property="order_id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="total_fee" jdbcType="DECIMAL" property="total_fee" />
+    <result column="pic_path" jdbcType="VARCHAR" property="pic_path" />
+    <result column="seller_id" jdbcType="VARCHAR" property="seller_id" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, item_id, goods_id, order_id, title, price, num, total_fee, pic_path, seller_id
+  </sql>
+  <select id="selectByExample" parameterType="com.pyg.entity.TbOrderItemExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_order_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_order_item
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_order_item
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pyg.entity.TbOrderItemExample">
+    delete from tb_order_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pyg.entity.TbOrderItem">
+    insert into tb_order_item (id, item_id, goods_id, 
+      order_id, title, price, 
+      num, total_fee, pic_path, 
+      seller_id)
+    values (#{id,jdbcType=BIGINT}, #{item_id,jdbcType=BIGINT}, #{goods_id,jdbcType=BIGINT}, 
+      #{order_id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{num,jdbcType=INTEGER}, #{total_fee,jdbcType=DECIMAL}, #{pic_path,jdbcType=VARCHAR}, 
+      #{seller_id,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pyg.entity.TbOrderItem">
+    insert into tb_order_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="item_id != null">
+        item_id,
+      </if>
+      <if test="goods_id != null">
+        goods_id,
+      </if>
+      <if test="order_id != null">
+        order_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="total_fee != null">
+        total_fee,
+      </if>
+      <if test="pic_path != null">
+        pic_path,
+      </if>
+      <if test="seller_id != null">
+        seller_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="item_id != null">
+        #{item_id,jdbcType=BIGINT},
+      </if>
+      <if test="goods_id != null">
+        #{goods_id,jdbcType=BIGINT},
+      </if>
+      <if test="order_id != null">
+        #{order_id,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="total_fee != null">
+        #{total_fee,jdbcType=DECIMAL},
+      </if>
+      <if test="pic_path != null">
+        #{pic_path,jdbcType=VARCHAR},
+      </if>
+      <if test="seller_id != null">
+        #{seller_id,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pyg.entity.TbOrderItemExample" resultType="java.lang.Long">
+    select count(*) from tb_order_item
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_order_item
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.item_id != null">
+        item_id = #{record.item_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.goods_id != null">
+        goods_id = #{record.goods_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.order_id != null">
+        order_id = #{record.order_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.num != null">
+        num = #{record.num,jdbcType=INTEGER},
+      </if>
+      <if test="record.total_fee != null">
+        total_fee = #{record.total_fee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pic_path != null">
+        pic_path = #{record.pic_path,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seller_id != null">
+        seller_id = #{record.seller_id,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_order_item
+    set id = #{record.id,jdbcType=BIGINT},
+      item_id = #{record.item_id,jdbcType=BIGINT},
+      goods_id = #{record.goods_id,jdbcType=BIGINT},
+      order_id = #{record.order_id,jdbcType=BIGINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      num = #{record.num,jdbcType=INTEGER},
+      total_fee = #{record.total_fee,jdbcType=DECIMAL},
+      pic_path = #{record.pic_path,jdbcType=VARCHAR},
+      seller_id = #{record.seller_id,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pyg.entity.TbOrderItem">
+    update tb_order_item
+    <set>
+      <if test="item_id != null">
+        item_id = #{item_id,jdbcType=BIGINT},
+      </if>
+      <if test="goods_id != null">
+        goods_id = #{goods_id,jdbcType=BIGINT},
+      </if>
+      <if test="order_id != null">
+        order_id = #{order_id,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="total_fee != null">
+        total_fee = #{total_fee,jdbcType=DECIMAL},
+      </if>
+      <if test="pic_path != null">
+        pic_path = #{pic_path,jdbcType=VARCHAR},
+      </if>
+      <if test="seller_id != null">
+        seller_id = #{seller_id,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pyg.entity.TbOrderItem">
+    update tb_order_item
+    set item_id = #{item_id,jdbcType=BIGINT},
+      goods_id = #{goods_id,jdbcType=BIGINT},
+      order_id = #{order_id,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      num = #{num,jdbcType=INTEGER},
+      total_fee = #{total_fee,jdbcType=DECIMAL},
+      pic_path = #{pic_path,jdbcType=VARCHAR},
+      seller_id = #{seller_id,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    insert into tb_order_item
+    (id, item_id, goods_id, order_id, title, price, num, total_fee, pic_path, seller_id
+      )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=BIGINT}, #{item.item_id,jdbcType=BIGINT}, #{item.goods_id,jdbcType=BIGINT}, 
+        #{item.order_id,jdbcType=BIGINT}, #{item.title,jdbcType=VARCHAR}, #{item.price,jdbcType=DECIMAL}, 
+        #{item.num,jdbcType=INTEGER}, #{item.total_fee,jdbcType=DECIMAL}, #{item.pic_path,jdbcType=VARCHAR}, 
+        #{item.seller_id,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" parameterType="map">
+    insert into tb_order_item (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'id'.toString() == column.value">
+          #{item.id,jdbcType=BIGINT}
+        </if>
+        <if test="'item_id'.toString() == column.value">
+          #{item.item_id,jdbcType=BIGINT}
+        </if>
+        <if test="'goods_id'.toString() == column.value">
+          #{item.goods_id,jdbcType=BIGINT}
+        </if>
+        <if test="'order_id'.toString() == column.value">
+          #{item.order_id,jdbcType=BIGINT}
+        </if>
+        <if test="'title'.toString() == column.value">
+          #{item.title,jdbcType=VARCHAR}
+        </if>
+        <if test="'price'.toString() == column.value">
+          #{item.price,jdbcType=DECIMAL}
+        </if>
+        <if test="'num'.toString() == column.value">
+          #{item.num,jdbcType=INTEGER}
+        </if>
+        <if test="'total_fee'.toString() == column.value">
+          #{item.total_fee,jdbcType=DECIMAL}
+        </if>
+        <if test="'pic_path'.toString() == column.value">
+          #{item.pic_path,jdbcType=VARCHAR}
+        </if>
+        <if test="'seller_id'.toString() == column.value">
+          #{item.seller_id,jdbcType=VARCHAR}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
+</mapper>

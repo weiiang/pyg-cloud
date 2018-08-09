@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pyg.mapper.TbOrderMapper">
+  <resultMap id="BaseResultMap" type="com.pyg.entity.TbOrder">
+    <id column="order_id" jdbcType="BIGINT" property="order_id" />
+    <result column="payment" jdbcType="DECIMAL" property="payment" />
+    <result column="payment_type" jdbcType="VARCHAR" property="payment_type" />
+    <result column="post_fee" jdbcType="VARCHAR" property="post_fee" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="create_time" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="update_time" />
+    <result column="payment_time" jdbcType="TIMESTAMP" property="payment_time" />
+    <result column="consign_time" jdbcType="TIMESTAMP" property="consign_time" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="end_time" />
+    <result column="close_time" jdbcType="TIMESTAMP" property="close_time" />
+    <result column="shipping_name" jdbcType="VARCHAR" property="shipping_name" />
+    <result column="shipping_code" jdbcType="VARCHAR" property="shipping_code" />
+    <result column="user_id" jdbcType="VARCHAR" property="user_id" />
+    <result column="buyer_message" jdbcType="VARCHAR" property="buyer_message" />
+    <result column="buyer_nick" jdbcType="VARCHAR" property="buyer_nick" />
+    <result column="buyer_rate" jdbcType="VARCHAR" property="buyer_rate" />
+    <result column="receiver_area_name" jdbcType="VARCHAR" property="receiver_area_name" />
+    <result column="receiver_mobile" jdbcType="VARCHAR" property="receiver_mobile" />
+    <result column="receiver_zip_code" jdbcType="VARCHAR" property="receiver_zip_code" />
+    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
+    <result column="expire" jdbcType="TIMESTAMP" property="expire" />
+    <result column="invoice_type" jdbcType="VARCHAR" property="invoice_type" />
+    <result column="source_type" jdbcType="VARCHAR" property="source_type" />
+    <result column="seller_id" jdbcType="VARCHAR" property="seller_id" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    order_id, payment, payment_type, post_fee, status, create_time, update_time, payment_time, 
+    consign_time, end_time, close_time, shipping_name, shipping_code, user_id, buyer_message, 
+    buyer_nick, buyer_rate, receiver_area_name, receiver_mobile, receiver_zip_code, receiver, 
+    expire, invoice_type, source_type, seller_id
+  </sql>
+  <select id="selectByExample" parameterType="com.pyg.entity.TbOrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_order
+    where order_id = #{order_id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tb_order
+    where order_id = #{order_id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.pyg.entity.TbOrderExample">
+    delete from tb_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.pyg.entity.TbOrder">
+    insert into tb_order (order_id, payment, payment_type, 
+      post_fee, status, create_time, 
+      update_time, payment_time, consign_time, 
+      end_time, close_time, shipping_name, 
+      shipping_code, user_id, buyer_message, 
+      buyer_nick, buyer_rate, receiver_area_name, 
+      receiver_mobile, receiver_zip_code, receiver, 
+      expire, invoice_type, source_type, 
+      seller_id)
+    values (#{order_id,jdbcType=BIGINT}, #{payment,jdbcType=DECIMAL}, #{payment_type,jdbcType=VARCHAR}, 
+      #{post_fee,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{create_time,jdbcType=TIMESTAMP}, 
+      #{update_time,jdbcType=TIMESTAMP}, #{payment_time,jdbcType=TIMESTAMP}, #{consign_time,jdbcType=TIMESTAMP}, 
+      #{end_time,jdbcType=TIMESTAMP}, #{close_time,jdbcType=TIMESTAMP}, #{shipping_name,jdbcType=VARCHAR}, 
+      #{shipping_code,jdbcType=VARCHAR}, #{user_id,jdbcType=VARCHAR}, #{buyer_message,jdbcType=VARCHAR}, 
+      #{buyer_nick,jdbcType=VARCHAR}, #{buyer_rate,jdbcType=VARCHAR}, #{receiver_area_name,jdbcType=VARCHAR}, 
+      #{receiver_mobile,jdbcType=VARCHAR}, #{receiver_zip_code,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, 
+      #{expire,jdbcType=TIMESTAMP}, #{invoice_type,jdbcType=VARCHAR}, #{source_type,jdbcType=VARCHAR}, 
+      #{seller_id,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pyg.entity.TbOrder">
+    insert into tb_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="order_id != null">
+        order_id,
+      </if>
+      <if test="payment != null">
+        payment,
+      </if>
+      <if test="payment_type != null">
+        payment_type,
+      </if>
+      <if test="post_fee != null">
+        post_fee,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="create_time != null">
+        create_time,
+      </if>
+      <if test="update_time != null">
+        update_time,
+      </if>
+      <if test="payment_time != null">
+        payment_time,
+      </if>
+      <if test="consign_time != null">
+        consign_time,
+      </if>
+      <if test="end_time != null">
+        end_time,
+      </if>
+      <if test="close_time != null">
+        close_time,
+      </if>
+      <if test="shipping_name != null">
+        shipping_name,
+      </if>
+      <if test="shipping_code != null">
+        shipping_code,
+      </if>
+      <if test="user_id != null">
+        user_id,
+      </if>
+      <if test="buyer_message != null">
+        buyer_message,
+      </if>
+      <if test="buyer_nick != null">
+        buyer_nick,
+      </if>
+      <if test="buyer_rate != null">
+        buyer_rate,
+      </if>
+      <if test="receiver_area_name != null">
+        receiver_area_name,
+      </if>
+      <if test="receiver_mobile != null">
+        receiver_mobile,
+      </if>
+      <if test="receiver_zip_code != null">
+        receiver_zip_code,
+      </if>
+      <if test="receiver != null">
+        receiver,
+      </if>
+      <if test="expire != null">
+        expire,
+      </if>
+      <if test="invoice_type != null">
+        invoice_type,
+      </if>
+      <if test="source_type != null">
+        source_type,
+      </if>
+      <if test="seller_id != null">
+        seller_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="order_id != null">
+        #{order_id,jdbcType=BIGINT},
+      </if>
+      <if test="payment != null">
+        #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="payment_type != null">
+        #{payment_type,jdbcType=VARCHAR},
+      </if>
+      <if test="post_fee != null">
+        #{post_fee,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null">
+        #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update_time != null">
+        #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payment_time != null">
+        #{payment_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="consign_time != null">
+        #{consign_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="end_time != null">
+        #{end_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="close_time != null">
+        #{close_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shipping_name != null">
+        #{shipping_name,jdbcType=VARCHAR},
+      </if>
+      <if test="shipping_code != null">
+        #{shipping_code,jdbcType=VARCHAR},
+      </if>
+      <if test="user_id != null">
+        #{user_id,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer_message != null">
+        #{buyer_message,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer_nick != null">
+        #{buyer_nick,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer_rate != null">
+        #{buyer_rate,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver_area_name != null">
+        #{receiver_area_name,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver_mobile != null">
+        #{receiver_mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver_zip_code != null">
+        #{receiver_zip_code,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver != null">
+        #{receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="expire != null">
+        #{expire,jdbcType=TIMESTAMP},
+      </if>
+      <if test="invoice_type != null">
+        #{invoice_type,jdbcType=VARCHAR},
+      </if>
+      <if test="source_type != null">
+        #{source_type,jdbcType=VARCHAR},
+      </if>
+      <if test="seller_id != null">
+        #{seller_id,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.pyg.entity.TbOrderExample" resultType="java.lang.Long">
+    select count(*) from tb_order
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_order
+    <set>
+      <if test="record.order_id != null">
+        order_id = #{record.order_id,jdbcType=BIGINT},
+      </if>
+      <if test="record.payment != null">
+        payment = #{record.payment,jdbcType=DECIMAL},
+      </if>
+      <if test="record.payment_type != null">
+        payment_type = #{record.payment_type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.post_fee != null">
+        post_fee = #{record.post_fee,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.create_time != null">
+        create_time = #{record.create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.update_time != null">
+        update_time = #{record.update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.payment_time != null">
+        payment_time = #{record.payment_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.consign_time != null">
+        consign_time = #{record.consign_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.end_time != null">
+        end_time = #{record.end_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.close_time != null">
+        close_time = #{record.close_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.shipping_name != null">
+        shipping_name = #{record.shipping_name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shipping_code != null">
+        shipping_code = #{record.shipping_code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.user_id != null">
+        user_id = #{record.user_id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyer_message != null">
+        buyer_message = #{record.buyer_message,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyer_nick != null">
+        buyer_nick = #{record.buyer_nick,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buyer_rate != null">
+        buyer_rate = #{record.buyer_rate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.receiver_area_name != null">
+        receiver_area_name = #{record.receiver_area_name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.receiver_mobile != null">
+        receiver_mobile = #{record.receiver_mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.receiver_zip_code != null">
+        receiver_zip_code = #{record.receiver_zip_code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.receiver != null">
+        receiver = #{record.receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="record.expire != null">
+        expire = #{record.expire,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.invoice_type != null">
+        invoice_type = #{record.invoice_type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.source_type != null">
+        source_type = #{record.source_type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seller_id != null">
+        seller_id = #{record.seller_id,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_order
+    set order_id = #{record.order_id,jdbcType=BIGINT},
+      payment = #{record.payment,jdbcType=DECIMAL},
+      payment_type = #{record.payment_type,jdbcType=VARCHAR},
+      post_fee = #{record.post_fee,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      create_time = #{record.create_time,jdbcType=TIMESTAMP},
+      update_time = #{record.update_time,jdbcType=TIMESTAMP},
+      payment_time = #{record.payment_time,jdbcType=TIMESTAMP},
+      consign_time = #{record.consign_time,jdbcType=TIMESTAMP},
+      end_time = #{record.end_time,jdbcType=TIMESTAMP},
+      close_time = #{record.close_time,jdbcType=TIMESTAMP},
+      shipping_name = #{record.shipping_name,jdbcType=VARCHAR},
+      shipping_code = #{record.shipping_code,jdbcType=VARCHAR},
+      user_id = #{record.user_id,jdbcType=VARCHAR},
+      buyer_message = #{record.buyer_message,jdbcType=VARCHAR},
+      buyer_nick = #{record.buyer_nick,jdbcType=VARCHAR},
+      buyer_rate = #{record.buyer_rate,jdbcType=VARCHAR},
+      receiver_area_name = #{record.receiver_area_name,jdbcType=VARCHAR},
+      receiver_mobile = #{record.receiver_mobile,jdbcType=VARCHAR},
+      receiver_zip_code = #{record.receiver_zip_code,jdbcType=VARCHAR},
+      receiver = #{record.receiver,jdbcType=VARCHAR},
+      expire = #{record.expire,jdbcType=TIMESTAMP},
+      invoice_type = #{record.invoice_type,jdbcType=VARCHAR},
+      source_type = #{record.source_type,jdbcType=VARCHAR},
+      seller_id = #{record.seller_id,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pyg.entity.TbOrder">
+    update tb_order
+    <set>
+      <if test="payment != null">
+        payment = #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="payment_type != null">
+        payment_type = #{payment_type,jdbcType=VARCHAR},
+      </if>
+      <if test="post_fee != null">
+        post_fee = #{post_fee,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="create_time != null">
+        create_time = #{create_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update_time != null">
+        update_time = #{update_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payment_time != null">
+        payment_time = #{payment_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="consign_time != null">
+        consign_time = #{consign_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="end_time != null">
+        end_time = #{end_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="close_time != null">
+        close_time = #{close_time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shipping_name != null">
+        shipping_name = #{shipping_name,jdbcType=VARCHAR},
+      </if>
+      <if test="shipping_code != null">
+        shipping_code = #{shipping_code,jdbcType=VARCHAR},
+      </if>
+      <if test="user_id != null">
+        user_id = #{user_id,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer_message != null">
+        buyer_message = #{buyer_message,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer_nick != null">
+        buyer_nick = #{buyer_nick,jdbcType=VARCHAR},
+      </if>
+      <if test="buyer_rate != null">
+        buyer_rate = #{buyer_rate,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver_area_name != null">
+        receiver_area_name = #{receiver_area_name,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver_mobile != null">
+        receiver_mobile = #{receiver_mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver_zip_code != null">
+        receiver_zip_code = #{receiver_zip_code,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver != null">
+        receiver = #{receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="expire != null">
+        expire = #{expire,jdbcType=TIMESTAMP},
+      </if>
+      <if test="invoice_type != null">
+        invoice_type = #{invoice_type,jdbcType=VARCHAR},
+      </if>
+      <if test="source_type != null">
+        source_type = #{source_type,jdbcType=VARCHAR},
+      </if>
+      <if test="seller_id != null">
+        seller_id = #{seller_id,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_id = #{order_id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pyg.entity.TbOrder">
+    update tb_order
+    set payment = #{payment,jdbcType=DECIMAL},
+      payment_type = #{payment_type,jdbcType=VARCHAR},
+      post_fee = #{post_fee,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      create_time = #{create_time,jdbcType=TIMESTAMP},
+      update_time = #{update_time,jdbcType=TIMESTAMP},
+      payment_time = #{payment_time,jdbcType=TIMESTAMP},
+      consign_time = #{consign_time,jdbcType=TIMESTAMP},
+      end_time = #{end_time,jdbcType=TIMESTAMP},
+      close_time = #{close_time,jdbcType=TIMESTAMP},
+      shipping_name = #{shipping_name,jdbcType=VARCHAR},
+      shipping_code = #{shipping_code,jdbcType=VARCHAR},
+      user_id = #{user_id,jdbcType=VARCHAR},
+      buyer_message = #{buyer_message,jdbcType=VARCHAR},
+      buyer_nick = #{buyer_nick,jdbcType=VARCHAR},
+      buyer_rate = #{buyer_rate,jdbcType=VARCHAR},
+      receiver_area_name = #{receiver_area_name,jdbcType=VARCHAR},
+      receiver_mobile = #{receiver_mobile,jdbcType=VARCHAR},
+      receiver_zip_code = #{receiver_zip_code,jdbcType=VARCHAR},
+      receiver = #{receiver,jdbcType=VARCHAR},
+      expire = #{expire,jdbcType=TIMESTAMP},
+      invoice_type = #{invoice_type,jdbcType=VARCHAR},
+      source_type = #{source_type,jdbcType=VARCHAR},
+      seller_id = #{seller_id,jdbcType=VARCHAR}
+    where order_id = #{order_id,jdbcType=BIGINT}
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    insert into tb_order
+    (order_id, payment, payment_type, post_fee, status, create_time, update_time, payment_time, 
+      consign_time, end_time, close_time, shipping_name, shipping_code, user_id, buyer_message, 
+      buyer_nick, buyer_rate, receiver_area_name, receiver_mobile, receiver_zip_code, 
+      receiver, expire, invoice_type, source_type, seller_id)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.order_id,jdbcType=BIGINT}, #{item.payment,jdbcType=DECIMAL}, #{item.payment_type,jdbcType=VARCHAR}, 
+        #{item.post_fee,jdbcType=VARCHAR}, #{item.status,jdbcType=VARCHAR}, #{item.create_time,jdbcType=TIMESTAMP}, 
+        #{item.update_time,jdbcType=TIMESTAMP}, #{item.payment_time,jdbcType=TIMESTAMP}, 
+        #{item.consign_time,jdbcType=TIMESTAMP}, #{item.end_time,jdbcType=TIMESTAMP}, #{item.close_time,jdbcType=TIMESTAMP}, 
+        #{item.shipping_name,jdbcType=VARCHAR}, #{item.shipping_code,jdbcType=VARCHAR}, 
+        #{item.user_id,jdbcType=VARCHAR}, #{item.buyer_message,jdbcType=VARCHAR}, #{item.buyer_nick,jdbcType=VARCHAR}, 
+        #{item.buyer_rate,jdbcType=VARCHAR}, #{item.receiver_area_name,jdbcType=VARCHAR}, 
+        #{item.receiver_mobile,jdbcType=VARCHAR}, #{item.receiver_zip_code,jdbcType=VARCHAR}, 
+        #{item.receiver,jdbcType=VARCHAR}, #{item.expire,jdbcType=TIMESTAMP}, #{item.invoice_type,jdbcType=VARCHAR}, 
+        #{item.source_type,jdbcType=VARCHAR}, #{item.seller_id,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="batchInsertSelective" parameterType="map">
+    insert into tb_order (
+    <foreach collection="selective" item="column" separator=",">
+      ${column.escapedColumnName}
+    </foreach>
+    )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (
+      <foreach collection="selective" item="column" separator=",">
+        <if test="'order_id'.toString() == column.value">
+          #{item.order_id,jdbcType=BIGINT}
+        </if>
+        <if test="'payment'.toString() == column.value">
+          #{item.payment,jdbcType=DECIMAL}
+        </if>
+        <if test="'payment_type'.toString() == column.value">
+          #{item.payment_type,jdbcType=VARCHAR}
+        </if>
+        <if test="'post_fee'.toString() == column.value">
+          #{item.post_fee,jdbcType=VARCHAR}
+        </if>
+        <if test="'status'.toString() == column.value">
+          #{item.status,jdbcType=VARCHAR}
+        </if>
+        <if test="'create_time'.toString() == column.value">
+          #{item.create_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'update_time'.toString() == column.value">
+          #{item.update_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'payment_time'.toString() == column.value">
+          #{item.payment_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'consign_time'.toString() == column.value">
+          #{item.consign_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'end_time'.toString() == column.value">
+          #{item.end_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'close_time'.toString() == column.value">
+          #{item.close_time,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'shipping_name'.toString() == column.value">
+          #{item.shipping_name,jdbcType=VARCHAR}
+        </if>
+        <if test="'shipping_code'.toString() == column.value">
+          #{item.shipping_code,jdbcType=VARCHAR}
+        </if>
+        <if test="'user_id'.toString() == column.value">
+          #{item.user_id,jdbcType=VARCHAR}
+        </if>
+        <if test="'buyer_message'.toString() == column.value">
+          #{item.buyer_message,jdbcType=VARCHAR}
+        </if>
+        <if test="'buyer_nick'.toString() == column.value">
+          #{item.buyer_nick,jdbcType=VARCHAR}
+        </if>
+        <if test="'buyer_rate'.toString() == column.value">
+          #{item.buyer_rate,jdbcType=VARCHAR}
+        </if>
+        <if test="'receiver_area_name'.toString() == column.value">
+          #{item.receiver_area_name,jdbcType=VARCHAR}
+        </if>
+        <if test="'receiver_mobile'.toString() == column.value">
+          #{item.receiver_mobile,jdbcType=VARCHAR}
+        </if>
+        <if test="'receiver_zip_code'.toString() == column.value">
+          #{item.receiver_zip_code,jdbcType=VARCHAR}
+        </if>
+        <if test="'receiver'.toString() == column.value">
+          #{item.receiver,jdbcType=VARCHAR}
+        </if>
+        <if test="'expire'.toString() == column.value">
+          #{item.expire,jdbcType=TIMESTAMP}
+        </if>
+        <if test="'invoice_type'.toString() == column.value">
+          #{item.invoice_type,jdbcType=VARCHAR}
+        </if>
+        <if test="'source_type'.toString() == column.value">
+          #{item.source_type,jdbcType=VARCHAR}
+        </if>
+        <if test="'seller_id'.toString() == column.value">
+          #{item.seller_id,jdbcType=VARCHAR}
+        </if>
+      </foreach>
+      )
+    </foreach>
+  </insert>
+</mapper>

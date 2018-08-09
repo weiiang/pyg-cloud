@@ -12,7 +12,7 @@ import com.pyg.entity.TbBrand;
 
 @RestController
 @RequestMapping("/brand")
-public class BrandController {
+public class BrandController	{
 
 	@Autowired
 	private RestTemplate template;
