@@ -12,5 +12,16 @@
   		<artifactId>pyg-pojo</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	
+  	<!-- mybatisPlus插件开始 -->
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatisplus-spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatis-plus</artifactId>
+	</dependency>
+	<!-- mybatisPlus插件结束 -->
   	</dependencies>
 </project>

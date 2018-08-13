@@ -13,7 +13,16 @@
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	
-  	
+  	<!-- mybatisPlus插件开始 -->
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatisplus-spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatis-plus</artifactId>
+	</dependency>
+	<!-- mybatisPlus插件结束 -->
   	<!-- 老版本依赖开始 -->
   		<dependency>
 		<groupId>com.alibaba</groupId>
@@ -25,13 +34,13 @@
   		<!-- 引入自己定义的api通用包，可以使用Dept部门Entity -->
 		<!-- actuator监控信息完善 -->
 		<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-actuator</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-jms</artifactId>		
-	</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>		
+		</dependency>
 		<!-- 将微服务provider侧注册进eureka -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

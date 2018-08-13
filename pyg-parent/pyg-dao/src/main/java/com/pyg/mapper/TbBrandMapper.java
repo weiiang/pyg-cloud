@@ -1,16 +1,26 @@
 package com.pyg.mapper;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.baomidou.mybatisplus.plugins.Page;
-import com.pyg.entity.TbBrand;
-import com.pyg.entity.TbBrandExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.plugins.pagination.Pagination;
+import com.pyg.entity.TbBrand;
+import com.pyg.entity.TbBrandExample;
+
+
 @Mapper
 public interface TbBrandMapper extends BaseMapper<TbBrand>{
+	
+	/**
+	 * 分页查询
+	 * @param page	分页封装类
+	 * @param example	条件查询参数
+	 * @return
+	 */
+	List<TbBrand> selectByExample(Pagination page, TbBrandExample example);
    
     long countByExample(TbBrandExample example);
 
@@ -22,7 +32,7 @@ public interface TbBrandMapper extends BaseMapper<TbBrand>{
 
     int insertSelective(TbBrand record);
 
-    List<TbBrand> selectByExample(Page<TbBrand> page, TbBrandExample example);
+   
 
     TbBrand selectByPrimaryKey(Long id);
 

@@ -8,6 +8,21 @@
   <artifactId>pyg-common</artifactId>
   
   <dependencies>
+  <!-- 工具类 -->
+  	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+	</dependency>
+  <!-- mybatisPlus插件开始 -->
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatisplus-spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.baomidou</groupId>
+		<artifactId>mybatis-plus</artifactId>
+	</dependency>
+	<!-- mybatisPlus插件结束 -->
   	<!-- 老版本依赖开始 -->
   		<dependency>
 		<groupId>com.alibaba</groupId>
