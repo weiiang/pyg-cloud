@@ -1,6 +1,7 @@
 package com.pyg.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -13,6 +14,14 @@ import com.pyg.entity.TbBrandExample;
 
 @Mapper
 public interface TbBrandMapper extends BaseMapper<TbBrand>{
+	
+	/**
+	 * 分页条件查询
+	 * @param page	分页记录
+	 * @param params	参数map
+	 * @return
+	 */
+	List<Map<String, Object>> getPage(Pagination page, @Param("params")Map<String, Object> params);
 	
 	/**
 	 * 分页查询

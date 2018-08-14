@@ -23,5 +23,10 @@
 		<artifactId>mybatis-plus</artifactId>
 	</dependency>
 	<!-- mybatisPlus插件结束 -->
-  	</dependencies>
+	<dependency>
+		<groupId>com.pyg</groupId>
+		<artifactId>pyg-common</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+  </dependencies>
 </project>

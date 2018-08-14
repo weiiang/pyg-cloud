@@ -6,7 +6,10 @@ package com.pyg.page;
  */
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
@@ -71,6 +74,32 @@ public class InitPage {
 		}
 		return page;
 	}
+
 	
+	/**
+	 * 将Map转换成GET方式的查询条件
+	 * @param queryMap	map格式的参数
+	 * @return
+	 */
+	public static String mapToQueryString(Map<String, Object> queryMap) {
+		StringBuilder queryString = new StringBuilder();
+		queryString.append("?");
+		
+		for(String param: queryMap.keySet()) {
+			if(StringUtils.isNotBlank(queryMap.get(param).toString())) {
+				queryString.append(param+"="+queryMap.get(param)+"&");
+			}
+		}
+		return queryString.toString().substring(0, queryString.toString().length() - 1);
+	}
+	
+	public static void main(String[] args) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("name", "张三");
+		map.put("age", "16");
+		map.put("gender", "nan");
+		map.put("sa", "sa");
+		System.out.println(mapToQueryString(map));
+	}
 }
 

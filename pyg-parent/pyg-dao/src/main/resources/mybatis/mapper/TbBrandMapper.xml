@@ -218,4 +218,13 @@
       )
     </foreach>
   </insert>
+
+  <select id="getPage" 	resultType="java.util.Map">
+  	select a.* from tb_brand a
+  	where 1 = 1
+  	<if test="params != null and params.name != null">
+  		and a.name = #{params.name}
+  	</if>
+  </select>
+
 </mapper>
