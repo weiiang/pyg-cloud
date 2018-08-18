@@ -9,3 +9,12 @@ export function getBrandList(params) {
         params: params,
     });
 }
+
+//获取品牌列表+条件查询
+export function getBrandPage(params) {
+    return fetch({
+        url: '/brand/page',
+        method: 'get',
+        params: params,
+    });
+}
