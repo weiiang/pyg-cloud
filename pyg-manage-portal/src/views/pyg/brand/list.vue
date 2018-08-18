@@ -77,10 +77,12 @@
                 this.list_loadding = false;
             },
             setInitPage(pageSize){
+                alert("pageSize:"+pageSize)
                 this.listQueryParams.size=pageSize;
                 this.getListData();
             },
-            pageSizeChange(){
+            pageSizeChange(pageIndex){
+                alert("pageindex"+pageIndex)
                 this.listQueryParams.current=pageIndex;
                 this.getListData();
             },
