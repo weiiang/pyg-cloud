@@ -123,13 +123,11 @@
             },
 
             setInitPage(pageSize){
-                alert("pageSize:"+pageSize)
-                this.listQueryParams.size=pageSize;
+                this.listQueryParams.current=pageSize;
                 this.getListData();
             },
-            pageSizeChange(pageIndex) {
-                alert("pageindex" + pageIndex)
-                this.listQueryParams.current = pageIndex;
+            pageSizeChange(pageSize) {
+                this.listQueryParams.current = pageSize;
                 this.getListData();
             },
             /**

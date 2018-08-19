@@ -31,9 +31,47 @@ public class Result implements Serializable {
         return result;
     }
 
-    public static Result success(Object data) {
+    @Override
+	public String toString() {
+		return "Result [code=" + code + ", msg=" + msg + ", data=" + data + "]";
+	}
+
+	public static Result success(Object data) {
         Result result = new Result();
         result.setResultCode(ResultCode.SUCCESS);
+        result.setData(data);
+        return result;
+    }
+    public static Result success(Integer code, String msg, Object data) {
+        Result result = new Result();
+        result.setResultCode(ResultCode.SUCCESS);
+        result.setData(data);
+        return result;
+    }
+    
+    public static Result failure(ResultCode resultCode) {
+        Result result = new Result();
+        result.setResultCode(resultCode);
+        return result;
+    }
+
+    public static Result failure(ResultCode resultCode, Object data) {
+        Result result = new Result();
+        result.setResultCode(resultCode);
+        result.setData(data);
+        return result;
+    }
+    
+    /**
+     *   失败返回结果
+     * @param resultCode	自定义错误码
+     * @param msg		异常信息 
+     * @param data		数据
+     * @return	Result
+     */
+    public static Result failure(Integer resultCode, String msg,Object data) {
+        Result result = new Result();
+        result.setCode(resultCode);
         result.setData(data);
         return result;
     }
@@ -62,18 +100,7 @@ public class Result implements Serializable {
 		this.data = data;
 	}
 
-	public static Result failure(ResultCode resultCode) {
-        Result result = new Result();
-        result.setResultCode(resultCode);
-        return result;
-    }
-
-    public static Result failure(ResultCode resultCode, Object data) {
-        Result result = new Result();
-        result.setResultCode(resultCode);
-        result.setData(data);
-        return result;
-    }
+	
 
     public void setResultCode(ResultCode code) {
         this.code = code.code();

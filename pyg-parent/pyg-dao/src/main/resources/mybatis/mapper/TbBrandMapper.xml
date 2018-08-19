@@ -226,5 +226,22 @@
   		and a.name = #{params.name}
   	</if>
   </select>
+  
+  <select id="getInfo1" 	resultType="java.util.Map" parameterType="long">
+  	select 
+  	a.name,
+  	a.first_char, 
+  	from tb_brand a
+  	where a.id = #{id}
+  </select>
+  
+  <select id="getInfo2" 	resultType="java.util.Map" parameterType="long">
+  	select 
+  	a.id,
+  	a.name,
+  	a.first_char, 
+  	from tb_brand a
+  	where a.id = #{id}
+  </select>
 
 </mapper>
