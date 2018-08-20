@@ -30,6 +30,23 @@ public interface TbBrandMapper extends BaseMapper<TbBrand>{
 	 * @return
 	 */
 	List<TbBrand> selectByExample(Pagination page, TbBrandExample example);
+	
+	/**
+	 * 查看详情
+	 * @param id
+	 * @return
+	 */
+	Map<String, Object> getInfo1(@Param("id")long id);
+
+	/**
+	 * 编辑时候的数据回显
+	 * @param id
+	 * @return
+	 */
+	Map<String, Object> getInfo2(@Param("id")long id);
+	
+	
+	
    
     long countByExample(TbBrandExample example);
 
@@ -56,6 +73,8 @@ public interface TbBrandMapper extends BaseMapper<TbBrand>{
     int batchInsert(@Param("list") List<TbBrand> list);
 
     int batchInsertSelective(@Param("list") List<TbBrand> list, @Param("selective") TbBrand.Column ... selective);
+
+	
 
 
 
