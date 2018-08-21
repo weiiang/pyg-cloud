@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableEurekaClient
 @EnableDiscoveryClient
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.pyg" })
+@ComponentScan(basePackages = {"com.pyg"})
 public class ManageServiceApp {
 
 	public static void main(String[] args) {

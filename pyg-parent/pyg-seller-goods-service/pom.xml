@@ -12,7 +12,16 @@
   		<artifactId>pyg-seller-goods-interface</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
-  	
+  	<!-- API文档 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+		</dependency>
+		<!-- API文档 -->
   	<!-- mybatisPlus插件开始 -->
 	<dependency>
 		<groupId>com.baomidou</groupId>

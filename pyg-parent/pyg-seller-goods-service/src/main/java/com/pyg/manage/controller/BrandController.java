@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.pyg.base.controller.BaseController;
+import com.pyg.cache.redis.RedisUtil;
 import com.pyg.entity.Result;
 import com.pyg.entity.TbBrand;
 import com.pyg.entity.TbBrandExample;
