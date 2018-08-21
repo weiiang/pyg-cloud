@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.pyg.entity.Result;
 import com.pyg.entity.TbBrand;
-import com.pyg.manage.apiservice.BrandService;
+import com.pyg.manage.apiservice.TbBrandService;
 
-public class BrandServiceHystric implements BrandService{
+public class BrandServiceHystric implements TbBrandService{
 	
 	private Logger logger = LoggerFactory.getLogger(BrandServiceHystric.class);
 

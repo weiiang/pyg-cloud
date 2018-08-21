@@ -16,7 +16,7 @@ import com.pyg.entity.TbBrand;
 import com.pyg.manage.apiservice.hystric.BrandServiceHystric;
 
 @FeignClient(value = "GOODS-SERVICE", fallback = BrandServiceHystric.class)
-public interface BrandService {
+public interface TbBrandService {
 	
 	@RequestMapping("/brand/page")
 	public Page<Map<String, Object>> page(@RequestParam(value = "params") Map<String, Object> params);

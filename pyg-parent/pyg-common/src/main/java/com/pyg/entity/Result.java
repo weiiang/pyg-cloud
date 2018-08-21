@@ -73,6 +73,20 @@ public class Result implements Serializable {
         Result result = new Result();
         result.setCode(resultCode);
         result.setData(data);
+        result.setMsg(msg);
+        return result;
+    }
+    
+    /**
+     *   失败返回结果
+     * @param resultCode	自定义错误码
+     * @param msg		异常信息 
+     * @return	Result
+     */
+    public static Result failure(Integer resultCode, String msg) {
+        Result result = new Result();
+        result.setCode(resultCode);
+        result.setMsg(msg);
         return result;
     }
 

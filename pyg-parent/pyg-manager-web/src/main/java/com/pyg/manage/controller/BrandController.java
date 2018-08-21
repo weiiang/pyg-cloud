@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 import com.pyg.base.controller.BaseController;
 import com.pyg.entity.Result;
 import com.pyg.entity.TbBrand;
-import com.pyg.manage.apiservice.BrandService;
+import com.pyg.manage.apiservice.TbBrandService;
 
 @RestController
 @RequestMapping("/brand")
@@ -27,7 +27,7 @@ public class BrandController extends BaseController{
 	private RestTemplate template;
 	
 	@Autowired
-	private BrandService brandService;
+	private TbBrandService brandService;
 	
 	
 //	@SuppressWarnings("unchecked")
