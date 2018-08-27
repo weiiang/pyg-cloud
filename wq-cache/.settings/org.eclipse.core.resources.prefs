@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/wq/cache/CacheApp.java=UTF-8
+encoding//src/main/java/com/wq/cache/config/RedisConfig.java=UTF-8
+encoding//src/main/java/com/wq/cache/controller/CacheController.java=UTF-8
+encoding//src/main/java/com/wq/cache/util/RedisUtils.java=UTF-8
