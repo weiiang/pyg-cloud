@@ -23,8 +23,8 @@ import com.pyg.manage.apiservice.TbBrandService;
 public class BrandController extends BaseController{
 	private Logger logger =  LoggerFactory.getLogger(BrandController.class);
 
-	@Autowired
-	private RestTemplate template;
+//	@Autowired
+//	private RestTemplate template;
 	
 	@Autowired
 	private TbBrandService brandService;

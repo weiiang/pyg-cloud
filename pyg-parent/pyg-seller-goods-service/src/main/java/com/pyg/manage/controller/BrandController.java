@@ -6,6 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,7 +79,7 @@ public class BrandController extends BaseController {
 	}
 
 	@ApiOperation(value = "单个删除/批量删除通用API", notes = "当List只有一条数据删除单个,当多条数据逐个删除")
-	@PostMapping("/del")
+	@DeleteMapping("/del")
 	public Result del(List<Long>[] ids) {
 		try {
 			Integer delCount = brandService.delBeatch(ids);

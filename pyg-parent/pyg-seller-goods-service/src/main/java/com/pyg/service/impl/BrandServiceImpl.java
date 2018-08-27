@@ -79,11 +79,15 @@ public class BrandServiceImpl extends ServiceImpl<TbBrandMapper, TbBrand> implem
 	@Override
 	public Result batchImport(String fileName, MultipartFile file) {
 		//属性列表,与excel的顺序相对应
-		String[] properties = { "id", "name", "first_char"};
+		String[] properties = { "name", "first_char"};
 		@SuppressWarnings("unchecked")
 		List<Object> list = (List<Object>) ExcelReadUtils.getExcelList(fileName, file, TbBrand.class,properties).getData();
 		@SuppressWarnings("unchecked")
 		List<TbBrand> list2 = (List<TbBrand>)(List<?>)list;
+		for (TbBrand tbBrand : list2) {
+			System.out.println(tbBrand.getFirst_char());
+			System.out.println(tbBrand.getName());
+		}
 		this.baseMapper.batchInsert(list2);
 		return Result.success(list2);
 	}
