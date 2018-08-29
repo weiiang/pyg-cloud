@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.pyg.base.controller.BaseController;
 import com.pyg.entity.Result;
@@ -57,6 +56,7 @@ public class BrandController extends BaseController{
 	
 	@PostMapping("")
 	public Result edit(@RequestBody TbBrand brand){
+		logger.info("--------------------->"+brand.getName());
 		return brandService.edit(brand);
 	}
 	

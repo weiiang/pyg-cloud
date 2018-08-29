@@ -1,4 +1,4 @@
-import { getBrandList, getBrandPage } from 'api/manage/brand';
+import { getBrandList, getBrandPage,editBrand } from 'api/manage/brand';
 
 export default {
     actions: {
@@ -15,6 +15,16 @@ export default {
         manage_brandPage({commit}, params){
             return new Promise((resolve, reject) => {
                 getBrandPage(params).then(response => {
+                    resolve(response);
+                }).catch(error => {
+                    reject(error);
+                });
+            });
+        },
+
+        manage_editBrand({commit}, data){
+            return new Promise((resolve, reject) => {
+                editBrand(data).then(response => {
                     resolve(response);
                 }).catch(error => {
                     reject(error);
