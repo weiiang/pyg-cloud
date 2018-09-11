@@ -1,0 +1,36 @@
+server:
+  port: 8769
+
+spring:
+  application:
+    name: zuul-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+    instance-id: zuul-serviceId
+ 
+ 
+#ribbon:
+#  eureka:
+#    enabled: false
+
+zuul:
+  routes:
+    api-a:
+      path: /goods-service/**
+      service-id: goods-service
+    api-b:
+      path: /manage-web-service/**
+      service-id: manage-web-service
+
+#负载均衡配置，否则会找不到服务    
+goods-service:
+  ribbon:
+    listOfServers:  http://localhost:8001
+    
+manage-web-service:
+  ribbon:
+    listOfServers:  http://localhost:8011
