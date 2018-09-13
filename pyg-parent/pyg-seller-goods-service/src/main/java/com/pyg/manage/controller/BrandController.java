@@ -6,8 +6,10 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,8 +67,9 @@ public class BrandController extends BaseController {
 
 	@ApiOperation(value = "编辑新增通用API", notes = "当ID为空的时候新增,ID不为空的时候修改")
 	@PostMapping("/edit")
-	public Result edit(TbBrand tbBrand) {
+	public Result edit(@RequestBody TbBrand tbBrand) {
 		try {
+			logger.info("=====================>"+tbBrand.getName());
 			Map<String, Object> returnMap = brandService.edit(tbBrand);
 			return Result.success(returnMap);
 		} catch (Exception e) {
@@ -78,7 +81,7 @@ public class BrandController extends BaseController {
 	}
 
 	@ApiOperation(value = "单个删除/批量删除通用API", notes = "当List只有一条数据删除单个,当多条数据逐个删除")
-	@PostMapping("/del")
+	@DeleteMapping("/del")
 	public Result del(List<Long>[] ids) {
 		try {
 			Integer delCount = brandService.delBeatch(ids);
