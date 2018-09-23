@@ -19,7 +19,7 @@ public interface BrandService extends IService<TbBrand>{
 	
 	public Map<String, Object> getInfo(int type, long id);
 	
-	public Integer delBeatch(List<Long> [] ids);
+	public Integer delBeatch(List<Long> ids);
 	
 	public Map<String, Object> edit(TbBrand brand);
 

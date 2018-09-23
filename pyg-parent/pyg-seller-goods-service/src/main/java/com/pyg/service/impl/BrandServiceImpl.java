@@ -37,7 +37,8 @@ public class BrandServiceImpl extends ServiceImpl<TbBrandMapper, TbBrand> implem
 	public Page<Map<String, Object>> getPage(Map<String, Object> queryParams) {
 		Page<Map<String, Object>> page = new Page<>();
 		page = InitPage.intanceFromMap(queryParams, page);
-		return page.setRecords(this.baseMapper.getPage(page, queryParams));
+		 page.setRecords(this.baseMapper.getPage(page, queryParams));
+		 return page;
 	}
 
 	@Override
@@ -72,8 +73,8 @@ public class BrandServiceImpl extends ServiceImpl<TbBrandMapper, TbBrand> implem
 	}
 
 	@Override
-	public Integer delBeatch(List<Long>[] ids) {
-		return this.delBeatch(ids);
+	public Integer delBeatch(List<Long> ids) {
+		return this.baseMapper.deleteBatchIds(ids);
 	}
 
 	@Override

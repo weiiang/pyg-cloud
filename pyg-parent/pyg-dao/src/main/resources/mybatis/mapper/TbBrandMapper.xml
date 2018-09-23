@@ -230,7 +230,7 @@
   <select id="getInfo1" 	resultType="java.util.Map" parameterType="long">
   	select 
   	a.name,
-  	a.first_char, 
+  	a.first_char
   	from tb_brand a
   	where a.id = #{id}
   </select>
@@ -239,7 +239,7 @@
   	select 
   	a.id,
   	a.name,
-  	a.first_char, 
+  	a.first_char 
   	from tb_brand a
   	where a.id = #{id}
   </select>

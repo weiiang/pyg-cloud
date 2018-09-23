@@ -2,7 +2,7 @@
     <div>
         <Row>
             <div class="toolspan-btnGroup">
-                <Button type="primary" @click="edit" v-if="isAdd">
+                <Button type="primary" @click="add" v-if="isAdd">
                     <Icon type="plus-round"></Icon>
                     添加
                 </Button>
@@ -132,7 +132,7 @@
             getListData(){
                 this.list_loadding = true;
                 this.$store.dispatch("manage_brandPage",this.listQueryParams).then(res =>{
-                   this.tableData = res.data.data;
+                   this.tableData = res.data;
 
                 }).catch(err =>{
                     this.$Message.error(err)
@@ -145,20 +145,19 @@
                 this.getListData();
             },
             pageSizeChange(pageSize) {
-                alert(pageSize)
                 this.listQueryParams.size = pageSize;
                 this.getListData();
             },
             /**
              * 添加和编辑，当ID为空的时候添加，当ID不为空的时候编辑
              */
-            edit(id, index){
+            add(index, id){
                 this.$layer.iframe({
                     content: {
                         content: editBrand, //传递的组件对象
                         parent: this,//当前的vue对象
                         data:{
-
+                            id:id,
                         } //props
                     },
                     area:['350px','250px'],
@@ -166,13 +165,41 @@
                     shadeClose: false,
                 });
             },
+
+            edit(index, id){
+                this.$layer.iframe({
+                    content: {
+                        content: editBrand, //传递的组件对象
+                        parent: this,//当前的vue对象
+                        data:{
+                            id:id,
+                        } //props
+                    },
+                    area:['350px','250px'],
+                    title:"修改品牌信息",
+                    shadeClose: false,
+                });
+            },
+
+            remove(index, id){
+                alert(id);
+                let ids = [];
+                ids.push(id);
+                this.$Modal.confirm({
+                    title:"温馨提醒",
+                    content:"您确定删除当前选中的数据吗？",
+                    onOk: ()=>{
+                        this.$store.dispatch("manage_delBrand",ids).then(res=>{
+                            this.$layer.msg("成功删除"+res.data.data+"条数据！");
+                        });
+                        this.getListData();
+                    }
+                });
+
+            },
             batchDel(){
 
             },
-            del(index, id){
-
-            },
-
         },
         mounted(){
             this.getListData();

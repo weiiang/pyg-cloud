@@ -1,6 +1,7 @@
 package com.pyg.manage.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.pyg.base.controller.BaseController;
 import com.pyg.entity.Result;
 import com.pyg.entity.TbBrand;
@@ -45,8 +48,10 @@ public class BrandController extends BaseController{
 //	}
 	
 	@GetMapping("/list")
-	public Result getPageList(){
-		return Result.success(brandService.page(this.getParams()));
+	public Page<Map<String, Object>> getPageList(){
+//		Result result =  Result.success(brandService.page(this.getParams()));
+//		System.out.println(result.getData().toString());
+		return brandService.page(this.getParams());
 	}
 	
 	@GetMapping("/info")
@@ -60,8 +65,8 @@ public class BrandController extends BaseController{
 		return brandService.edit(brand);
 	}
 	
-	@DeleteMapping("")
-	public Result del(List<Long> ids){
+	@DeleteMapping("/del")
+	public Result del(@RequestParam("ids[]")List<Long> ids){
 		return brandService.delete(ids);
 	}
 

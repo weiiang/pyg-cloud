@@ -25,20 +25,35 @@ export default {
     data(){
         return {
             modal_loading:false,
-            formValidate:{},
+            formValidate:{
+                first_char:"",
+                name:"",
+            },
         }
     },
 
     methods:{
         handleSubmit(name){
             this.$store.dispatch("manage_editBrand",this.formValidate).then(res =>{
-                alert(res);
                 this.$layer.close(this.layerid)
                 this.$parent.getListData();
             })
-        }
+        },
+        handleReset(name){
+            this.$refs[name].resetFields();
+        },
     },
     mounted(){
+
+        if(this.id !="" && this.id !=null){
+            let params = {};
+            params.id = this.id;
+            params.type = 2;
+            this.$store.dispatch("manage_brandInfo",params).then(res =>{
+                this.formValidate = res.data.data;
+                console.log(JSON.stringify(this.formValidate))
+            });
+        }
 
     }
 }

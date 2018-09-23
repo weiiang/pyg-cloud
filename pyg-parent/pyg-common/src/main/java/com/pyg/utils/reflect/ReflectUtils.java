@@ -42,7 +42,7 @@ public class ReflectUtils {
 	 * @param object 类的字节码
 	 * @return
 	 */
-	public static Map<String, Field> getObjectField(Class object) {
+	public static Map<String, Field> getObjectField(Class<?> object) {
 		Field[] fields = object.getDeclaredFields(); // 获取object对象的所有属性
 		Map<String, Field> fieldMap = new HashMap<String, Field>();
 		for (Field field : fields) {

@@ -4,15 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.baomidou.mybatisplus.annotations.TableName;
+
 /**
  * Created By WQ
  * Description:
  * 
  */
+@TableName(value = "tb_brand")
 public class TbBrand implements Serializable {
-    /**
-     *
-     */
+    
     private Long id;
 
     /**
@@ -31,36 +32,23 @@ public class TbBrand implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
-    /**
-     * This method returns the value of the database column tb_brand.id
-     *
-     * @return the value of tb_brand.id
-     */
+   
     public Long getId() {
         return id;
     }
 
-    /**
-     */
+   
     public TbBrand withId(Long id) {
         this.setId(id);
         return this;
     }
 
-    /**
-     * This method sets the value of the database column tb_brand.id
-     *
-     * @param id the value for tb_brand.id
-     */
+  
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-     * This method returns the value of the database column tb_brand.name
-     *
-     * @return the value of tb_brand.name
-     */
+   
     public String getName() {
         return name;
     }
@@ -72,42 +60,28 @@ public class TbBrand implements Serializable {
         return this;
     }
 
-    /**
-     * This method sets the value of the database column tb_brand.name
-     *
-     * @param name the value for tb_brand.name
-     */
+   
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
 
-    /**
-     * This method returns the value of the database column tb_brand.first_char
-     *
-     * @return the value of tb_brand.first_char
-     */
+    
     public String getFirst_char() {
         return first_char;
     }
 
-    /**
-     */
+    
     public TbBrand withFirst_char(String first_char) {
         this.setFirst_char(first_char);
         return this;
     }
 
-    /**
-     * This method sets the value of the database column tb_brand.first_char
-     *
-     * @param first_char the value for tb_brand.first_char
-     */
+   
     public void setFirst_char(String first_char) {
         this.first_char = first_char == null ? null : first_char.trim();
     }
 
-    /**
-     */
+   
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -121,8 +95,7 @@ public class TbBrand implements Serializable {
         return sb.toString();
     }
 
-    /**
-     */
+    
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -140,8 +113,7 @@ public class TbBrand implements Serializable {
             && (this.getFirst_char() == null ? other.getFirst_char() == null : this.getFirst_char().equals(other.getFirst_char()));
     }
 
-    /**
-     */
+ 
     @Override
     public int hashCode() {
         final int prime = 31;

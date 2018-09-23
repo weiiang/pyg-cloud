@@ -82,7 +82,7 @@ public class BrandController extends BaseController {
 
 	@ApiOperation(value = "单个删除/批量删除通用API", notes = "当List只有一条数据删除单个,当多条数据逐个删除")
 	@DeleteMapping("/del")
-	public Result del(List<Long>[] ids) {
+	public Result del(@RequestParam("ids[]")List<Long> ids) {
 		try {
 			Integer delCount = brandService.delBeatch(ids);
 			return Result.success(delCount);

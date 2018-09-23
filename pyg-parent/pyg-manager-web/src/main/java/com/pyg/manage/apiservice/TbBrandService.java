@@ -28,7 +28,7 @@ public interface TbBrandService {
 	public Result edit(@RequestBody TbBrand brand);
 	
 	@DeleteMapping("/brand/del")
-	public Result delete(@RequestParam("ids")List<Long> ids);
+	public Result delete(@RequestParam("ids[]")List<Long> ids);
 	
 	
 
