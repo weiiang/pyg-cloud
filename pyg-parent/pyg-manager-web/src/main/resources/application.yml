@@ -3,9 +3,9 @@ server:
 
 eureka:
   instance:
-    hostname: eureka7001.com
+    instance-id: manage-web-serviceId
+    prefer-ip-address: true
   client:
-    register-with-eureka: false
     service-url:
       defaultZone:  http://eureka7001.com:7001/eureka
       
@@ -15,7 +15,7 @@ spring:
     time-zone:  Asia/Shanghai
     default-property-inclusion: non-null  #返回的字段为空的时候不返回该字段
   application:
-    name: goods-service
+    name: manage-web-service
 
   datasource:
     username: root

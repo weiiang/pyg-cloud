@@ -399,5 +399,6 @@
   	<module>pyg-eureka</module>
   	<module>pyg-manager-web</module>
   	<module>pyg-shop-web</module>
+  	<module>pyg-zuul</module>
   </modules>
 </project>
