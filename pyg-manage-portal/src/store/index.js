@@ -8,6 +8,8 @@ import getters from './getters';
 
 /*品优购后台*/
 import brand from './modules/manage/brand'
+import specification  from './modules/manage/specification'
+import specificationOption from './modules/manage/specificationOption'
 
 Vue.use(Vuex);
 
@@ -17,7 +19,9 @@ const store = new Vuex.Store({
     user,
     permission,
 
-      brand
+      brand,
+      specification,
+      specificationOption,
   },
   getters
 });
