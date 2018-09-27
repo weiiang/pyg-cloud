@@ -1,0 +1,308 @@
+2018-08-28 14:01:50.962 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 4288 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 14:01:50.963 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 14:01:51.020 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fa121e2: startup date [Tue Aug 28 14:01:51 CST 2018]; root of context hierarchy
+2018-08-28 14:01:51.413 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 14:01:53.171 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 14:01:53.199 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 14:01:53.200 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 14:01:53.382 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 14:01:53.382 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2362 ms
+2018-08-28 14:01:53.653 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 14:01:53.654 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 14:01:53.654 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 14:01:53.654 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 14:01:53.655 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 14:01:53.655 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 14:01:54.065 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fa121e2: startup date [Tue Aug 28 14:01:51 CST 2018]; root of context hierarchy
+2018-08-28 14:01:54.145 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-28 14:01:54.145 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-28 14:01:54.177 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 14:01:54.177 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 14:01:54.206 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 14:01:54.424 [main] INFO  org.springframework.boot.autoconfigure.security.AuthenticationManagerConfiguration - 
+
+Using default security password: 5af5fc2a-fd08-4ce3-8598-2e951fa94681
+
+2018-08-28 14:01:54.462 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2018-08-28 14:01:54.514 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29f0c4f2, org.springframework.security.web.context.SecurityContextPersistenceFilter@441cc260, org.springframework.security.web.header.HeaderWriterFilter@65004ff6, org.springframework.security.web.authentication.logout.LogoutFilter@415156bf, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2fc07784, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26dcd8c0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a022576, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7435a578, org.springframework.security.web.session.SessionManagementFilter@2032e725, org.springframework.security.web.access.ExceptionTranslationFilter@3adbe50f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@736f3e9e]
+2018-08-28 14:01:54.723 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-28 14:01:54.751 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-1002"]
+2018-08-28 14:01:54.792 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-1002"]
+2018-08-28 14:01:54.839 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-08-28 14:01:54.854 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 1002 (http)
+2018-08-28 14:01:54.860 [main] INFO  com.wq.auth.AuthApp - Started AuthApp in 4.371 seconds (JVM running for 7.181)
+2018-08-28 14:03:04.396 [http-nio-1002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-28 14:03:04.397 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-28 14:03:04.429 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+2018-08-28 14:05:28.998 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2018-08-28 14:05:28.999 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1fa121e2: startup date [Tue Aug 28 14:01:51 CST 2018]; root of context hierarchy
+2018-08-28 14:05:29.007 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-08-28 14:05:35.276 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 8380 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 14:05:35.277 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 14:05:35.315 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b2bac3f: startup date [Tue Aug 28 14:05:35 CST 2018]; root of context hierarchy
+2018-08-28 14:05:35.536 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 14:05:36.373 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 14:05:36.382 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 14:05:36.383 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 14:05:36.499 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 14:05:36.506 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1191 ms
+2018-08-28 14:05:36.791 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 14:05:36.792 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 14:05:36.792 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 14:05:36.792 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 14:05:36.792 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 14:05:36.792 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 14:05:37.131 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b2bac3f: startup date [Tue Aug 28 14:05:35 CST 2018]; root of context hierarchy
+2018-08-28 14:05:37.192 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-28 14:05:37.193 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-28 14:05:37.231 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 14:05:37.231 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 14:05:37.265 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 14:05:37.670 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2018-08-28 14:05:37.724 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52b6319f, org.springframework.security.web.context.SecurityContextPersistenceFilter@af78c87, org.springframework.security.web.header.HeaderWriterFilter@22d1886d, org.springframework.security.web.authentication.logout.LogoutFilter@77a281fc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2b4c3c29, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ecfcbc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8c46918, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e9456ae, org.springframework.security.web.session.SessionManagementFilter@393881f0, org.springframework.security.web.access.ExceptionTranslationFilter@3e48e859, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7551da2a]
+2018-08-28 14:05:37.849 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-28 14:05:37.896 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-1002"]
+2018-08-28 14:05:37.904 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-1002"]
+2018-08-28 14:05:37.913 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-08-28 14:05:37.925 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 1002 (http)
+2018-08-28 14:05:37.928 [main] INFO  com.wq.auth.AuthApp - Started AuthApp in 2.921 seconds (JVM running for 3.625)
+2018-08-28 14:06:07.854 [http-nio-1002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-28 14:06:07.854 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-28 14:06:07.894 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 40 ms
+2018-08-28 14:08:28.036 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2018-08-28 14:08:28.036 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b2bac3f: startup date [Tue Aug 28 14:05:35 CST 2018]; root of context hierarchy
+2018-08-28 14:08:28.039 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-08-28 15:18:27.646 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 11880 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:18:27.873 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:18:27.964 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7494f96a: startup date [Tue Aug 28 15:18:27 CST 2018]; root of context hierarchy
+2018-08-28 15:18:28.279 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:18:29.963 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:18:30.008 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:18:30.008 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:18:30.161 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:18:30.162 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2198 ms
+2018-08-28 15:18:30.419 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:18:30.420 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:18:30.420 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:18:30.420 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:18:30.420 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:18:30.420 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:18:30.481 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-28 15:20:07.788 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 10296 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:20:07.789 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:20:07.834 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:20:07 CST 2018]; root of context hierarchy
+2018-08-28 15:20:08.048 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:20:09.653 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:20:09.662 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:20:09.663 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:20:09.823 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:20:09.824 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1990 ms
+2018-08-28 15:20:10.247 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:20:10.248 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:20:10.248 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:20:10.248 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:20:10.248 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:20:10.249 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:20:10.655 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-28 15:21:37.087 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 740 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:21:37.088 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:21:37.135 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:21:37 CST 2018]; root of context hierarchy
+2018-08-28 15:21:37.391 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:21:38.774 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:21:38.785 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:21:38.786 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:21:38.918 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:21:38.918 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1783 ms
+2018-08-28 15:21:39.245 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:21:39.246 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:21:39.246 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:21:39.246 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:21:39.246 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:21:39.247 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:21:39.470 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-28 15:21:41.548 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:21:42.293 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-08-28 15:21:42.294 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-08-28 15:21:42.295 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-08-28 15:21:42.417 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-28 15:21:42.668 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-08-28 15:21:42.690 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-08-28 15:21:42.836 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-28 15:21:42.837 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-28 15:22:47.501 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 8040 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:22:47.502 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:22:47.551 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:22:47 CST 2018]; root of context hierarchy
+2018-08-28 15:22:47.739 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:22:49.146 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:22:49.154 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:22:49.155 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:22:49.260 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:22:49.260 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1709 ms
+2018-08-28 15:22:49.554 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:22:49.554 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:22:49.554 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:22:49.554 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:22:49.555 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:22:49.555 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:22:49.776 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-28 15:22:49.911 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:22:49.979 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-08-28 15:22:49.980 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-08-28 15:22:49.981 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-08-28 15:22:50.098 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-28 15:22:50.234 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-08-28 15:22:50.271 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-08-28 15:22:50.401 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-28 15:22:50.403 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-28 15:24:32.442 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 11836 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:24:32.443 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:24:32.487 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:24:32 CST 2018]; root of context hierarchy
+2018-08-28 15:24:32.685 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:24:34.332 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:24:34.340 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:24:34.340 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:24:34.458 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:24:34.458 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1971 ms
+2018-08-28 15:24:34.751 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:24:34.751 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:24:34.751 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:24:34.751 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:24:34.752 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:24:34.752 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:24:35.007 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-28 15:24:35.136 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:24:35.275 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-08-28 15:24:35.277 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-08-28 15:24:35.278 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-08-28 15:24:35.319 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-28 15:24:35.418 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-08-28 15:24:35.439 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-08-28 15:24:35.535 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-28 15:24:35.536 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-28 15:24:43.441 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 16064 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:24:43.442 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:24:43.486 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:24:43 CST 2018]; root of context hierarchy
+2018-08-28 15:24:43.795 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:24:45.188 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:24:45.195 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:24:45.196 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:24:45.314 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:24:45.314 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1828 ms
+2018-08-28 15:24:45.624 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:24:45.624 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:24:45.624 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:24:45.624 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:24:45.625 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:24:45.625 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:24:45.884 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-28 15:24:46.012 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:24:46.080 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-08-28 15:24:46.081 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-08-28 15:24:46.082 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-08-28 15:24:46.198 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-28 15:24:46.289 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-08-28 15:24:46.308 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-08-28 15:24:46.402 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-28 15:24:46.405 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-28 15:25:26.837 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 1120 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:25:26.837 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:25:26.879 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:25:26 CST 2018]; root of context hierarchy
+2018-08-28 15:25:27.109 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:25:28.649 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:25:28.659 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:25:28.660 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:25:28.800 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:25:28.801 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1922 ms
+2018-08-28 15:25:29.101 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:25:29.101 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:25:29.101 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:25:29.101 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:25:29.102 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:25:29.102 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:25:29.308 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-28 15:25:29.436 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:25:29.501 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-08-28 15:25:29.502 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-08-28 15:25:29.503 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-08-28 15:25:29.609 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-28 15:25:29.702 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-08-28 15:25:29.721 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-08-28 15:25:30.286 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:25:30.953 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:25:26 CST 2018]; root of context hierarchy
+2018-08-28 15:25:31.027 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/user]}" onto public java.lang.String com.wq.auth.user.UserController.get()
+2018-08-28 15:25:31.034 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-28 15:25:31.034 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-28 15:25:31.079 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 15:25:31.079 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 15:25:31.756 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 15:25:32.274 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2018-08-28 15:25:32.372 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65eb3597, org.springframework.security.web.context.SecurityContextPersistenceFilter@209f3887, org.springframework.security.web.header.HeaderWriterFilter@5db948c9, org.springframework.security.web.authentication.logout.LogoutFilter@42fc4ac4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@35145874, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b35798, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3e28d779, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c7279a5, org.springframework.security.web.session.SessionManagementFilter@339f3a55, org.springframework.security.web.access.ExceptionTranslationFilter@fbe70d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b30a50d]
+2018-08-28 15:25:32.496 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-28 15:25:32.498 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-28 15:25:32.501 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-08-28 15:25:32.553 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-1002"]
+2018-08-28 15:25:32.585 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-1002"]
+2018-08-28 15:25:32.637 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-08-28 15:25:32.652 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 1002 (http)
+2018-08-28 15:25:32.658 [main] INFO  com.wq.auth.AuthApp - Started AuthApp in 6.087 seconds (JVM running for 6.784)
+2018-08-28 15:25:47.059 [http-nio-1002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-28 15:25:47.059 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-28 15:25:47.094 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 35 ms
+2018-08-28 15:25:47.266 [http-nio-1002-exec-1] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-08-28 15:26:48.102 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2018-08-28 15:26:48.102 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:25:26 CST 2018]; root of context hierarchy
+2018-08-28 15:26:48.104 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-08-28 15:26:48.104 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2018-08-28 15:26:48.105 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:26:48.108 [RMI TCP Connection(2)-192.168.124.209] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-28 15:26:53.450 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on DESKTOP-K04D3ML with PID 8416 (E:\test\wq-auth\target\classes started by admin in E:\test\wq-auth)
+2018-08-28 15:26:53.451 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-28 15:26:53.507 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:26:53 CST 2018]; root of context hierarchy
+2018-08-28 15:26:53.695 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-28 15:26:55.019 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-28 15:26:55.028 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-28 15:26:55.029 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-28 15:26:55.169 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-28 15:26:55.169 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1662 ms
+2018-08-28 15:26:55.464 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-28 15:26:55.465 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-28 15:26:55.465 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-28 15:26:55.465 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-28 15:26:55.465 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-08-28 15:26:55.465 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-08-28 15:26:55.670 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-28 15:26:55.809 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:26:55.886 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-08-28 15:26:55.887 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-08-28 15:26:55.889 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-08-28 15:26:56.003 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-28 15:26:56.203 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-08-28 15:26:56.244 [main] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-08-28 15:26:56.601 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:26:57.081 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:26:53 CST 2018]; root of context hierarchy
+2018-08-28 15:26:57.161 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/user]}" onto public java.lang.String com.wq.auth.user.UserController.get()
+2018-08-28 15:26:57.164 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-28 15:26:57.164 [main] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-28 15:26:57.206 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 15:26:57.206 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 15:26:58.011 [main] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-28 15:26:58.434 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2018-08-28 15:26:58.489 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@76c86567, org.springframework.security.web.context.SecurityContextPersistenceFilter@f245bdd, org.springframework.security.web.header.HeaderWriterFilter@20a24edf, org.springframework.security.web.authentication.logout.LogoutFilter@7f8a9454, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3b435211, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@280fafd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e1e837d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e5efcab, org.springframework.security.web.session.SessionManagementFilter@77524ca7, org.springframework.security.web.access.ExceptionTranslationFilter@3a3b10f4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@590d6c76]
+2018-08-28 15:26:58.612 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-28 15:26:58.613 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-28 15:26:58.617 [main] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-08-28 15:26:58.646 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-1002"]
+2018-08-28 15:26:58.653 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-1002"]
+2018-08-28 15:26:58.674 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-08-28 15:26:58.690 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 1002 (http)
+2018-08-28 15:26:58.694 [main] INFO  com.wq.auth.AuthApp - Started AuthApp in 5.527 seconds (JVM running for 6.216)
+2018-08-28 15:27:00.076 [http-nio-1002-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-28 15:27:00.076 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-08-28 15:27:00.110 [http-nio-1002-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 34 ms
+2018-08-28 15:27:00.183 [http-nio-1002-exec-1] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-08-28 15:35:32.119 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2018-08-28 15:35:32.119 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@445b295b: startup date [Tue Aug 28 15:26:53 CST 2018]; root of context hierarchy
+2018-08-28 15:35:32.122 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2018-08-28 15:35:32.122 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2018-08-28 15:35:32.123 [RMI TCP Connection(2)-192.168.124.209] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-08-28 15:35:32.125 [RMI TCP Connection(2)-192.168.124.209] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

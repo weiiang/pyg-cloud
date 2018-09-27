@@ -50,8 +50,8 @@ export const asyncRouterMap = [
             component: {render (c) { return c('router-view') }},
             children: [
                 {path: 'brand',name: '品牌管理',icon:'stats-bars',component: _import('pyg/brand/list'), hidden:false, },
-                {path: 'goods',name: '商品管理',icon:'arrow-graph-up-right',component: _import('pyg/RadarChart')},
-                {path: 'cakechart',name: '蛋糕销量图表',icon:'ios-analytics',component: _import('pyg/CakeChart')}
+                {path: 'specification',name: '规格管理',icon:'arrow-graph-up-right',component: _import('pyg/specification/list')},
+                {path: 'typeTemplate',name: '模板管理',icon:'ios-analytics',component: _import('pyg/template/list')}
             ]
         },
      {path: '/dashboard',name: 'Dashboard',icon:'speedometer',component: _import('Dashboard')},
