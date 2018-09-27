@@ -12,11 +12,11 @@ public class Result implements Serializable {
 
     private static final long serialVersionUID = -3948389268046368059L;
 
-    private Integer code;
+    private Integer code = 200;
 
-    private String msg;
+    private String msg = "操作成功！";
 
-    private Object data;
+    private Object data = null;
 
     public Result() {}
 

@@ -5,6 +5,35 @@
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="spec_name" jdbcType="VARCHAR" property="spec_name" />
   </resultMap>
+
+
+  <select id="getPageList" 	resultType="java.util.Map">
+    select a.* from tb_specification a
+    where 1 = 1
+    <if test="params != null and params.spec_name != null">
+      and a.spec_name = #{params.spec_name}
+    </if>
+  </select>
+
+  <select id="getInfo1" 	resultType="java.util.Map" parameterType="long">
+    select
+    a.id,
+    a.tb_specification
+    from tb_specification a
+    where a.id = #{id}
+  </select>
+
+  <select id="getInfo2" 	resultType="java.util.Map" parameterType="long">
+    select
+    a.id,
+    a.tb_specification,
+    from tb_specification a
+    where a.id = #{id}
+  </select>
+
+
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

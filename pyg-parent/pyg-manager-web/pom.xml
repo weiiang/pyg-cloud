@@ -6,27 +6,27 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>pyg-manager-web</artifactId>
-  
+
   <dependencies>
-  	
-  	
+
+
   	<!-- 老版本依赖开始 -->
   		<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>fastjson</artifactId>
-		<version>1.2.28</version>		
+		<version>1.2.28</version>
 	</dependency>
   	<!-- 老版本依赖结束 -->
   	<!-- springCloud相关开始 -->
   		<!-- 引入自己定义的api通用包，可以使用Dept部门Entity -->
 		<!-- actuator监控信息完善 -->
-		<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
+	  <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-actuator</artifactId>
+	  </dependency>
+	  <dependency>
 		<groupId>org.springframework</groupId>
-		<artifactId>spring-jms</artifactId>		
+		<artifactId>spring-jms</artifactId>
 	</dependency>
 	<dependency>
       <groupId>org.springframework.cloud</groupId>
@@ -63,10 +63,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jetty</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
@@ -98,5 +94,10 @@
   		<artifactId>scala-library</artifactId>
   		<version>2.11.0</version>
   	</dependency>
+	  <dependency>
+		  <groupId>org.apache.httpcomponents</groupId>
+		  <artifactId>httpcore</artifactId>
+		  <version>4.4.10</version>
+	  </dependency>
   </dependencies>
 </project>

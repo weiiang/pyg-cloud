@@ -7,6 +7,19 @@
     <result column="spec_id" jdbcType="BIGINT" property="spec_id" />
     <result column="orders" jdbcType="INTEGER" property="orders" />
   </resultMap>
+
+
+
+  <select id="selectSpecOptionBySpecId" resultType="java.util.Map" parameterType="long">
+    SELECT a.* FROM  tb_specification_option a WHERE  a.spec_id = #{specId}
+  </select>
+
+
+
+
+
+
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

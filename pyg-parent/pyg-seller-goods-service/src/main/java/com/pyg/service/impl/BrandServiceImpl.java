@@ -37,8 +37,9 @@ public class BrandServiceImpl extends ServiceImpl<TbBrandMapper, TbBrand> implem
 	public Page<Map<String, Object>> getPage(Map<String, Object> queryParams) {
 		Page<Map<String, Object>> page = new Page<>();
 		page = InitPage.intanceFromMap(queryParams, page);
-		 page.setRecords(this.baseMapper.getPage(page, queryParams));
-		 return page;
+		List<Map<String, Object>> list = this.baseMapper.getPage(page, queryParams);
+		page.setRecords(list);
+		return page;
 	}
 
 	@Override
@@ -59,7 +60,6 @@ public class BrandServiceImpl extends ServiceImpl<TbBrandMapper, TbBrand> implem
 			this.baseMapper.updateById(brand);
 			flag = true;
 		} else {
-			brand.setId(IdWorker.getId());
 			this.baseMapper.insert(brand);
 			flag = true;
 		}

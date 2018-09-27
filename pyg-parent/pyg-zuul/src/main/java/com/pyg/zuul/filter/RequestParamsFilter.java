@@ -6,7 +6,7 @@ import java.util.Enumeration;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.io.IOUtils;
+//import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -72,8 +72,8 @@ public class RequestParamsFilter extends ZuulFilter{
 	                inp = ctx.getRequest().getInputStream();
 	                String body = null;
 	                if (inp != null) {
-	                	body = IOUtils.toString(inp);
-	                	logger.info("REQUEST::: > " + body);
+//	                	body = IOUtils.toString(inp);
+//	                	logger.info("REQUEST::: > " + body);
 
 	                }
 	            } catch (IOException e) {

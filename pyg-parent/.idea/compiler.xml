@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pyg-common" />
+        <module name="pyg-dao" />
+        <module name="pyg-eureka" />
+        <module name="pyg-manager-web" />
+        <module name="pyg-pojo" />
+        <module name="pyg-seller-goods-interface" />
+        <module name="pyg-seller-goods-service" />
+        <module name="pyg-shop-web" />
+        <module name="pyg-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pyg-common" target="1.8" />
+      <module name="pyg-dao" target="1.8" />
+      <module name="pyg-eureka" target="1.8" />
+      <module name="pyg-manager-web" target="1.8" />
+      <module name="pyg-parent" target="1.8" />
+      <module name="pyg-pojo" target="1.8" />
+      <module name="pyg-seller-goods-interface" target="1.8" />
+      <module name="pyg-seller-goods-service" target="1.8" />
+      <module name="pyg-shop-web" target="1.8" />
+      <module name="pyg-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
