@@ -1,0 +1,27 @@
+2018-08-29 20:15:38.393 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on V31N8TMYZQTDQ8U with PID 2424 (D:\Workspace\pyg-server\pyg-cloud\wq-auth\target\classes started by Administrator in D:\Workspace\pyg-server\pyg-cloud\wq-auth)
+2018-08-29 20:15:38.395 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-29 20:15:38.446 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@408d971b: startup date [Wed Aug 29 20:15:38 CST 2018]; root of context hierarchy
+2018-08-29 20:15:38.559 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-29 20:15:40.203 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-29 20:15:40.212 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-29 20:15:40.212 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-29 20:15:40.308 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-29 20:15:40.308 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1862 ms
+2018-08-29 20:20:50.303 [main] INFO  com.wq.auth.AuthApp - Starting AuthApp on V31N8TMYZQTDQ8U with PID 5596 (D:\Workspace\pyg-server\pyg-cloud\wq-auth\target\classes started by Administrator in D:\Workspace\pyg-server\pyg-cloud\wq-auth)
+2018-08-29 20:20:50.304 [main] INFO  com.wq.auth.AuthApp - No active profile set, falling back to default profiles: default
+2018-08-29 20:20:50.355 [main] INFO  org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@408d971b: startup date [Wed Aug 29 20:20:50 CST 2018]; root of context hierarchy
+2018-08-29 20:20:50.461 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.6.Final
+2018-08-29 20:20:51.882 [main] INFO  org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 1002 (http)
+2018-08-29 20:20:51.890 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-29 20:20:51.891 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-08-29 20:20:51.983 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-29 20:20:51.983 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1628 ms
+2018-08-29 20:20:52.493 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-29 20:20:52.628 [localhost-startStop-1] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-08-29 20:20:52.700 [localhost-startStop-1] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-08-29 20:20:52.702 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-08-29 20:20:52.703 [localhost-startStop-1] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-08-29 20:20:52.743 [localhost-startStop-1] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-08-29 20:20:52.851 [localhost-startStop-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-08-29 20:20:52.875 [localhost-startStop-1] INFO  org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2018-08-29 20:20:53.037 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
